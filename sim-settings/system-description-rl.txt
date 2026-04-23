@@ -1,0 +1,562 @@
+===============================================================
+SYSTEM MODEL AND PROBLEM FORMULATION
+UAV-Assisted WSN Routing with Unified Distributed RL (UDQL)
+===============================================================
+
+1. SYSTEM MODEL
+===============
+
+1.1 Network Model
+-----------------
+We consider a UAV-assisted wireless sensor network (WSN) deployed over a 
+square sensing field:
+
+    Area A = 500m × 500m
+
+The network consists of:
+    - N = 100 static sensor nodes randomly distributed
+    - One Base Station (BS) located far outside the sensing field:
+        BS = (-250, 250, 0)
+    - One UAV acting as a mobile sink:
+        Altitude H = 30 m
+        Speed v = 10 m/s
+
+Each sensor node has:
+    Initial Energy E0 = 0.5 J
+
+---------------------------------------------------------------
+ROUND-BASED OPERATION
+---------------------------------------------------------------
+The network operates in discrete rounds t. Each round consists of:
+
+    1. Energy-aware LEACH clustering
+    2. RL-based clustering refinement
+    3. Intra-cluster data transmission
+    4. CH-level routing decisions (RL)
+    5. Routing Flow based UAV discovery and scheduling
+    6. UAV data collection
+    7. UAV-to-BS transmission
+    8. RL learning update (all agents)
+
+---------------------------------------------------------------
+Full Flow Context
+---------------------------------------------------------------
+
+LEACH Clustering
+        ↓
+RL Clustering Refinement
+        ↓
+Intra-cluster Data Transmission
+        ↓
+CH RL Routing Decisions
+        ↓
+UAV Beacon + Scheduling
+        ↓
+UAV Data Collection
+        ↓
+UAV → BS Transmission
+        ↓
+RL Updates
+
+---------------------------------------------------------------
+ENERGY MODEL
+---------------------------------------------------------------
+
+Electronics energy:
+    E_elec = 50 nJ/bit
+
+Amplifier:
+    ε_fs = 10 pJ/(bit/m²)
+
+Packet sizes:
+    Control = 200 bits
+    Data    = 2000 bits
+
+Transmission energy:
+
+    E_tx(k,d) =
+        kE_elec + kε_fs d^2       if d < d0
+        kE_elec + kε_mp d^4       if d ≥ d0
+
+Reception energy:
+    E_rx(k) = kE_elec
+
+
+1.2 Energy-Aware LEACH Clustering
+--------------------------------
+
+Cluster Head (CH) selection probability:
+    p = 0.1
+
+Energy-aware threshold:
+
+    T_i(t) =
+        (p * (E_i(t)/E0)) / (1 - p * (t mod (1/p)))   if i ∈ G
+        0                                             otherwise
+
+Where:
+    E_i(t) = residual energy of node i
+    G = eligible node set
+
+---------------------------------------------------------------
+Cluster Formation:
+---------------------------------------------------------------
+Nodes join CHs based on:
+    - minimum distance
+    - strongest RSSI
+
+RL-based clustering refinement:
+
+After the standard energy-aware LEACH clustering phase, some nodes may fail to join any cluster due to:
+
+sparse deployment
+distance constraints
+weak CH advertisements
+
+These nodes are termed unclustered nodes. Instead of forcing them into suboptimal behavior (e.g., always becoming standalone CHs), we introduce a lightweight RL-based decision mechanism that allows each unclustered node to adaptively choose the most efficient role.
+
+State Definition (Discretized)
+Each unclustered node observes a local state:
+
+𝑆_𝑛 = (𝐸,𝐷,𝑁𝑑,𝑈)
+
+Where:
+E: residual energy level → {LOW, MEDIUM, HIGH}
+D: distance to nearest CH → {NEAR, FAR}
+𝑁d: neighbor density → {SPARSE, MODERATE, DENSE}
+𝑈: UAV proximity likelihood → {LOW, HIGH}
+
+👉 These are computed locally using:
+
+received signal strength (RSSI)
+neighbor discovery messages
+recent UAV beacon history
+
+Action Space
+
+Each unclustered node selects one of the following actions:
+
+JOIN: 
+    Join the nearest CH even if it is relatively far
+R   elax standard LEACH join threshold
+SELF_CH:
+    Declare itself as an independent CH
+    Accept data from nearby nodes if any
+WAIT_UAV:
+    Do not join any cluster
+    Buffer sensed data and wait for UAV direct collection
+    
+Action Execution Logic
+JOIN (Refined):
+	since nodes have already have cached ch info, 
+		no broadcasting new join discovery
+		no re-requesting CH advertisements
+	Node sends join request to nearest CH - select best ch from cached ch table, send only one unicast join message
+			Each node maintains a local CH candidate table: CH_Table = { (CH_id, RSSI, distance_estimate, timestamp) }
+	Uses higher transmission energy (long-range)
+SELF_CH:
+Node advertises itself as CH
+Operates like a normal CH
+    self_ch revised:
+        Become a silent/local CH, do not broadcast CH_ADV, optionally accept a limited number of nearby nodes via passive discovery.
+
+self_ch revised:
+Become a silent/local CH, do not broadcast CH_ADV, optionally accept a limited number of nearby nodes via passive discovery. controlled late join via passive discovery using hello/status piggybacking
+	To avoid creating “bad CHs”:
+
+		SELF_CH only accepts joins if:
+
+				Energy ≥ threshold
+				Load < capacity
+		Distance to neighbors is small
+
+		Otherwise:
+
+			It acts as solo CH
+
+WAIT_UAV:
+Node stores generated data in buffer
+Transmits only when UAV is in range
+
+
+Data Aggregation at CH
+
+    Each CH:
+        collects data from members
+        performs data aggregation/fusion
+        👉 Reduces redundancy and packet size
+
+CH-Level RL Routing Decision (Core Stage)
+
+    Action Space (CH Agent)
+
+        Each CH selects one:
+
+            TRANSMIT_TO_UAV: send immediately if UAV is reachable
+            BUFFER:  store data and wait for UAV
+        FORWARD_TO_CH:    send to neighboring CH (multi-hop)
+
+    State Observed by CH
+        S_c =(E,Q,A,U,D_neighbor)
+
+        Where:
+            E: residual energy
+            Q: queue size
+            A: packet age
+            U: UAV proximity (from beacon)
+            D_neighbor: distance to nearby CHs
+
+    Decision Logic
+        If UAV is near → TRANSMIT
+        If UAV far but delay tolerable → BUFFER
+        If neighbor CH closer to UAV → FORWARD
+        👉 RL learns optimal policy over time
+    
+    Q-learning Update
+
+After action:
+    CH observes:
+        delivery success (from uav)
+        delay
+        energy spent
+    Updates Q-table
+
+
+
+1.3 Communication Model
+----------------------
+
+    Sensor → CH     : IEEE 802.15.4
+    CH → UAV        : IEEE 802.15.4
+    UAV → BS        : IEEE 802.11
+
+All communications are energy-constrained.
+
+
+
+
+
+1.4 UAV Mobility Model (RCLF)
+----------------------------
+
+UAV velocity:
+
+    v(t+1) = α v_rand + (1 - α) v_flow
+
+Where:
+    v_rand = random waypoint component
+    v_flow = routing-driven flow vector
+
+Flow vector:
+
+    v_flow = Σ (P_i * d̂_i)
+
+Priority:
+
+    P_i = w1*Q_i + w2*A_i + w3*(1/E_i)
+
+Where:
+    Q_i = queue size at CH
+    A_i = packet age
+    E_i = residual energy
+
+
+1.5 RL-BASED UAV–CH Communication & Scheduling
+------------------------------------
+This stage consists of three tightly coupled steps:
+
+1. UAV Beacon Broadcast (Network Awareness)
+2. CH Status Reporting (Local State Feedback)
+3. RL-Based CH Scheduling Decision (Core Intelligence)
+
+
+---------------------------------------------------------------
+STEP 1: UAV Beacon Broadcast
+---------------------------------------------------------------
+UAV periodically broadcasts HELLO message:
+
+    HELLO:
+        UAV_ID
+        Current_Position (x, y, z)
+        Residual_Mission_Time (T_remain)
+        Velocity_Vector
+    Purpose:
+        Notify nearby CHs of UAV presence
+        Allow CHs to estimate:
+        distance to UAV
+        expected contact time
+---------------------------------------------------------------
+STEP 2: CH Status Reporting
+---------------------------------------------------------------
+Given CH set C(t), limited service capacity of uav, K, Select S(t) ⊂ C(t), ∣S(t)∣ ≤ K
+
+Each CH responds:
+
+    STATUS:
+        - Queue size (Q_i)
+        - Average packet age (A_i)
+        - Residual energy (E_i)
+    Responses can be time slotted or random backoff Based to avoid collision
+
+---------------------------------------------------------------
+STEP 3: RL-based UAV Scheduling Decision (core component)
+---------------------------------------------------------------
+UAV constructs state table:
+
+    S_UAV = { (Q_i, A_i, E_i) }
+
+Constraint:
+
+    |S(t)| ≤ K   (limited CHs per round)
+
+
+State Representation (UAV Agent)
+
+For each CH i:  
+    S_i = (Q_i,A_i,E_i,D_i)
+
+Where:
+
+Q_i: queue size
+A_i: packet age
+E_i: residual energy
+D_i: distance to UAV
+
+Action Space
+
+    UAV actions are defined as:
+        SELECT_CH(i) → prioritize CH i
+        SKIP_CH(i) → ignore CH i
+        (implemented iteratively or via ranking)
+
+Decision Strategy
+
+    UAV computes a priority score implicitly via Q-values:
+        High queue → high priority
+        High delay → high priority
+        Low energy → high priority
+        Near UAV → preferred
+---------------------------------------------------------------
+STEP 4: Data Collection
+---------------------------------------------------------------
+UAV sends POLL to selected CHs:
+
+    CH → UAV: data transmission
+    UAV → CH: ACK
+
+
+1.6 Problem Formulation
+----------------------
+
+---------------------------------------------------------------
+Constraints:
+---------------------------------------------------------------
+
+1. UAV capacity:
+    |S(t)| ≤ K
+
+2. Energy:
+    E_i(t) > 0
+
+3. Queue dynamics:
+    Q_i(t+1) = Q_i(t) + λ_i - μ_i
+
+---------------------------------------------------------------
+Objective (RL-based):
+---------------------------------------------------------------
+
+Maximize expected cumulative reward:
+
+    max_π  E[ Σ γ^t R(t) ]
+
+Reward:
+
+    R(t) =
+        w1 * PDR(t)
+      - w2 * Delay(t)
+      - w3 * EnergyVariance(t)
+      - w4 * Starvation(t)
+
+
+===============================================================
+2. UNIFIED DISTRIBUTED RL FRAMEWORK (UDQL)
+===============================================================
+
+2.1 Agents
+----------
+    - Node Agent (clustering refinement)
+    - CH Agent (routing decisions)
+    - UAV Agent (scheduling + mobility)
+
+
+2.2 State Representation
+-----------------------
+
+General state:
+
+    S = [E, Q, A, U, D]
+
+Where:
+    E = energy
+    Q = queue
+    A = packet age
+    U = UAV proximity
+    D = distance/connectivity
+
+
+2.3 Action Spaces
+----------------
+
+Node Agent:
+    JOIN, SELF_CH, WAIT_UAV
+
+CH Agent:
+    BUFFER, FORWARD, TRANSMIT
+
+UAV Agent:
+    SELECT_CH, ADJUST_DIRECTION
+
+
+2.4 Reward Function
+------------------
+
+    R = w1*Delivery - w2*Delay - w3*Energy - w4*Starvation
+
+
+2.5 Q-Learning Updates
+---------------------
+
+Each agent maintains its own Q-table.
+
+---------------------------------------------------------------
+Node Agent:
+---------------------------------------------------------------
+
+    Q_n(s,a) ← Q_n(s,a) + α_n [r_n + γ_n max Q_n(s',a') - Q_n(s,a)]
+
+---------------------------------------------------------------
+CH Agent:
+---------------------------------------------------------------
+
+    Q_c(s,a) ← Q_c(s,a) + α_c [r_c + γ_c max Q_c(s',a') - Q_c(s,a)]
+
+---------------------------------------------------------------
+UAV Agent:
+---------------------------------------------------------------
+
+    Q_u(s,a) ← Q_u(s,a) + α_u [r_u + γ_u max Q_u(s',a') - Q_u(s,a)]
+
+---------------------------------------------------------------
+Synchronization:
+---------------------------------------------------------------
+- Agents learn independently
+- Share consistent reward components
+- No centralized training required
+
+
+===============================================================
+3. ALGORITHMS
+===============================================================
+
+Algorithm 1: Overall Protocol
+----------------------------
+
+FOR each round t:
+    Perform energy-aware LEACH clustering
+    Apply RL clustering refinement
+    Nodes send data to CHs
+    CHs perform RL routing decisions
+
+    UAV broadcasts HELLO
+    CHs send STATUS
+
+    UAV selects CHs using RL
+    UAV moves using RCLF
+
+    UAV collects data
+    UAV sends data to BS
+
+    Update Q-tables (Node, CH, UAV)
+END FOR
+
+
+Algorithm 2: Node RL (Clustering Refinement)
+-------------------------------------------
+
+IF node is unclustered:
+    observe state S
+    choose action (ε-greedy)
+
+    IF JOIN:
+        join nearest CH
+    ELSE IF SELF_CH:
+        become CH
+    ELSE:
+        wait for UAV
+
+    compute reward
+    update Q-table
+
+
+Algorithm 3: CH RL (Routing Decision)
+------------------------------------
+
+FOR each packet:
+    observe state S
+    choose action
+
+    IF BUFFER:
+        store packet
+    ELSE IF FORWARD:
+        send to neighbor CH
+    ELSE:
+        transmit to UAV
+
+    compute reward
+    update Q-table
+
+
+Algorithm 4: UAV RL (Scheduling + Mobility)
+------------------------------------------
+
+observe CH states
+select priority CHs
+
+compute flow vector
+update velocity using RCLF
+
+move UAV
+collect data
+
+compute reward
+update Q-table
+
+
+
+---------------------------------
+METRICS TO BE COLLECTED
+---------------------------------
+1. Stability and Longevity Metrics
+    - First Node Death (FND) Round: The specific round number at which the first sensor node exhausts its energy. This is the gold standard for network stability.
+    - Network Lifetime (Last Node Death - LND): The point where the network can no longer maintain coverage.
+2. Performance and Quality of Service (QoS)
+    - Average End-to-End Delay: The average time taken for a packet to travel from the source node to the Base Station. Include a Cumulative Distribution Function (CDF) of delay to show the jitter and consistency.
+    - Packet Delivery Ratio (PDR): The ratio of packets successfully received by the Base Station to the total packets sent.
+    - Control Overhead Ratio: The ratio of control packets (RCLF signaling, CH advertisements) to data packets. Since your protocol is RL-based, you must prove that the "learning" and "RCLF updates" do not consume more energy than they save.
+    - Data Latency per Round: Given the UAV's mobility, plot the latency vs. the distance of the UAV from the BS to show how the protocol adapts to the UAV's flight path.
+    Buffer Overflow Rate: The percentage of packets dropped at Cluster Heads due to full buffers. This specifically validates your RCLF "Data Pressure" mechanism—if the UAV "flows" toward high-demand CHs correctly, this rate should be near zero.
+3. RL/Learning Convergence Metrics
+    - Learning Convergence Curve: A plot of the Moving Average Reward vs. Training Rounds. It should show a clear upward trend that stabilizes as the Q-table converges.
+    (OR, Convergence Speed: The number of simulation rounds required for the total reward to stabilize.)
+    - Exploration vs. Exploitation Trade-off: Plot the number of random actions ($\epsilon$) taken over time to show that the system successfully transitions from exploring the environment to optimizing the routing path.
+    - State-Space Coverage: A heatmap of the network area showing how often the UAV visited different regions. This proves the RCLF mobility effectively covers the network field rather than hovering in one "rich" area.
+4. UAV-Specific Mobility Metrics
+    - Trajectory Efficiency Index (TEI): The ratio of "Information Collected" to "Distance Traveled" by the UAV. This proves that the RCLF-Q movement is more purposeful than random or fixed-path mobility.
+    - UAV Contact Duration: The average time the UAV stays within the communication range of a CH. This evaluates whether the RL agent has learned to "slow down" or "hover" when data pressure is high.
+
+
+
+
+===============================================================
+END OF MODEL & FORMULATION
+===============================================================

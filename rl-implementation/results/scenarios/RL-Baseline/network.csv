@@ -1,0 +1,3 @@
+Round,Time,TotalEnergy,AliveNodes,DeadNodes,AvgEnergy
+1,200,49.9823,100,0,0.499823
+2,400,49.9345,100,0,0.499345

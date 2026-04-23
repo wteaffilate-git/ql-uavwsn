@@ -1,0 +1,15 @@
+=== Simulation Summary ===
+Total Nodes: 100
+FND (First Node Death): Round -1
+LND (Last Node Death): Round -1
+Total Packets Generated: 185
+Total Packets Received: 10
+Overall PDR: 0.0540541
+Average End-to-End Delay: 201.602 s
+Total Energy Consumed: 0.065019 J
+Total Contact Events: 6
+Total Expired Packets: 0
+Buffer Overflow Rate: 0
+Unique RL States Visited: 3
+RL Actions Taken: 176
+RL Exploration Actions: 44

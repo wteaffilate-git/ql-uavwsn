@@ -1,0 +1,85 @@
+================================================================================
+COMPREHENSIVE SIMULATION SCENARIO: HYBRID UAV-WSN MULE (S_IDEAL)
+================================================================================
+
+1. SCENARIO CONTEXT & OBJECTIVE
+-------------------------------
+Environment: A 500m x 500m remote forest/agricultural area for environmental 
+monitoring. Because the field is isolated, nodes cannot reach the Base Station 
+(BS) directly. The UAV acts as a "Data Mule," departing from a remote research 
+facility (BS) to collect aggregated data from the field.
+
+Goal: Maximize Network Lifetime (FND) and Packet Delivery Ratio (PDR) using 
+a hybrid "Search-and-Collect" strategy: 
+- Systematic Raster Scanning for discovery.
+- Opportunistic Breadcrumb Navigation (Algorithm 4) for collection.
+
+2. PHYSICAL TOPOLOGY & NETWORK CONFIGURATION
+--------------------------------------------
+- Area Dimensions: 500m x 500m (Total Area: 250,000 m²)
+- Node Density (N): 400 Nodes (Ensures ~5 CHs within any node's reach)
+- Deployment: Uniform Random Distribution.
+- Base Station (BS): Located at (-50, 250) — Centered horizontally to the 
+  left of the field to minimize UAV flight return time.
+- Communication Ranges:
+    * Node-to-Node/CH (Rc): 100 m
+    * CH-to-UAV (Ru): 150 m (Creates a 300m swath, requiring a multi-pass scan)
+
+3. RADIO & ENERGY SPECIFICATIONS (FIRST-ORDER MODEL)
+----------------------------------------------------
+- Initial Node Energy (E0): 0.5 Joules per node.
+- Energy Parameters:
+    * Electronics (E_elec): 50 nJ/bit
+    * Free Space Amp (ε_fs): 10 pJ/bit/m²
+    * Multi-path Amp (ε_mp): 0.0013 pJ/bit/m⁴
+    * Data Aggregation (E_DA): 5 nJ/bit
+- Packet Characteristics:
+    * Data Packet (k): 2000 bits
+    * Control Packet: 200 bits
+
+4. UAV DYNAMICS & NAVIGATION LOGIC
+----------------------------------
+- Flight Altitude: 30 m (Fixed for consistent link budget)
+- Search Speed: 10 m/s
+- Raster Step Size: 250 m (Ensures two parallel passes with 50m overlap)
+- Discovery Mechanism: 
+    * The UAV broadcasts "Discovery Beacons" while following the raster path.
+    * Upon receiving a response, it evaluates the link stability (Algorithm 3).
+- Breadcrumb Mechanism (Algorithm 4):
+    * CHs share a list of "Neighbor CHs" (L_nbr) with the UAV.
+    * The UAV dynamically deviates from the raster path to visit breadcrumb targets.
+    * State-Preserving Resumption: After visiting a breadcrumb chain, the UAV 
+      returns to the exact Raster Checkpoint to ensure no clusters are missed.
+
+
+
+5. OPERATIONAL TIMING (ROUND STRUCTURE)
+---------------------------------------
+Total Round Duration (T_round): 180 Seconds (Calculated for 400-node throughput)
+- Phase 1: Clustering (10s):
+    Nodes compute Energy-Aware Threshold T(n) = [P / (1-P(r mod 1/P))] * (Eres/Einit).
+- Phase 2: Data Transmission (20s):
+    Member nodes transmit to CHs using TDMA slots. CHs aggregate data into buffers.
+- Phase 3: UAV Collection Phase (140s):
+    The UAV executes the Raster Scan + Breadcrumb loop across the 500m field.
+- Phase 4: Return & BS Upload (10s):
+    UAV returns to (-50, 250) and offloads data via high-speed link.
+
+6. CORE METRICS & VALIDATION
+----------------------------
+The simulation calculates the following dynamic outputs (No static presets):
+- Stability Period (FND): The round number when the first node energy < 0.001J.
+- PDR (Packet Delivery Ratio): (Packets at BS) / (Packets generated at Nodes).
+- Average End-to-End Delay: Sum of (BS_Recv_Time - Node_Gen_Time).
+- Link Stability Index: Histogram of successful vs. failed CH handshakes based 
+  on the Tc >= Treq geometric calculation.
+- Isolated Nodes Count: Number of nodes failing to find a CH within 100m.
+
+7. EXECUTION REQUIREMENTS
+-------------------------
+- Platform: OMNeT++ 6.3 + INET 4.5 Framework.
+- Termination Criteria: 
+    1. Last Node Dies (LND).
+    2. Mission Timeout (if UAV battery depleted - optional extension).
+- Statistical Significance: 30 Iterations per scenario using unique random seeds.
+================================================================================

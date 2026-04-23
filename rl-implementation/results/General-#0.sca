@@ -1,0 +1,4002 @@
+version 3
+run General-0-20260423-14:21:17-11880
+attr configname General
+attr datetime 20260423-14:21:17
+attr datetimef 20260423-142117
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network UavWsnNetwork
+attr processid 11880
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 1
+config cmdenv-express-mode true
+config cmdenv-performance-display false
+config seed-set 1
+config sim-time-limit 250s
+config network UavWsnNetwork
+config sim-time-limit 300000s
+config *.numNodes 100
+config *.areaX 500m
+config *.areaY 500m
+config *.node[*].initialEnergy 0.5J
+config *.node[*].chProbability 0.1
+config *.node[*].controlPacketSize 200bit
+config *.node[*].dataPacketSize 2000bit
+config *.node[*].eElec 50e-9J
+config *.node[*].eFreeSpace 10e-12J
+config *.node[*].eMultiPath 0.0013e-12J
+config *.node[*].idleListeningPower 1.84e-5W
+config *.node[*].chDutyCycle 0.3
+config *.node[*].memberDutyCycle 0.02
+config *.node[*].isolatedDutyCycle 0.001
+config *.node[*].commRadius 100m
+config *.node[*].neighborDiscoveryDelay 0.2s
+config *.node[*].clusteringPhaseDelay 2.0s
+config *.node[*].joinAttemptDelay 0.8s
+config *.node[*].unclusteredTimeout 3.0s
+config *.node[*].roundDuration 200.0s
+config *.node[*].maxBufferSize 200000bit
+config *.bs.commRadius 200m
+config *.bs.xPos -100m
+config *.bs.yPos 250m
+config *.uav.uavHeight 30m
+config *.uav.minSpeed 10mps
+config *.uav.maxSpeed 10mps
+config *.uav.searchSpeed 10mps
+config *.uav.discoveryInterval 5.0s
+config *.uav.commRadius 192m
+config *.uav.dataRate 2000000bps
+config *.uav.handshakeDelay 0.05s
+config *.uav.roundDuration 200s
+config *.uav.collectionWindow 130s
+config **.scalar-recording true
+config **.vector-recording true
+config cmdenv-event-banners false
+config **.cmdenv-log-level debug
+
+par UavWsnNetwork.bs typename "\"BaseStation\""
+par UavWsnNetwork.bs xPos -100m
+attr unit m
+par UavWsnNetwork.bs yPos 250m
+attr unit m
+par UavWsnNetwork.bs commRadius 200m
+attr unit m
+scalar UavWsnNetwork.bs totalPacketsReceived 1
+scalar UavWsnNetwork.bs totalBitsReceived 10000
+par UavWsnNetwork.uav typename "\"UAVNode\""
+par UavWsnNetwork.uav uavHeight 30m
+attr unit m
+par UavWsnNetwork.uav minSpeed 10mps
+attr unit mps
+par UavWsnNetwork.uav maxSpeed 10mps
+attr unit mps
+par UavWsnNetwork.uav searchSpeed 10mps
+attr unit mps
+par UavWsnNetwork.uav discoveryInterval 5s
+attr unit s
+par UavWsnNetwork.uav commRadius 192m
+attr unit m
+par UavWsnNetwork.uav dataRate 2e+06bps
+attr unit bps
+par UavWsnNetwork.uav handshakeDelay 0.05s
+attr unit s
+par UavWsnNetwork.uav roundDuration 200s
+attr unit s
+par UavWsnNetwork.uav collectionWindow 130s
+attr unit s
+par UavWsnNetwork.uav rasterWidth 100m
+attr unit m
+par UavWsnNetwork.node[0] typename "\"SensorNode\""
+par UavWsnNetwork.node[0] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[0] chProbability 0.1
+par UavWsnNetwork.node[0] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[0] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[0] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[0] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[0] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[0] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[0] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[0] chDutyCycle 0.3
+par UavWsnNetwork.node[0] memberDutyCycle 0.02
+par UavWsnNetwork.node[0] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[0] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[0] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[0] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[0] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[0] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[0] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[0] finalEnergy 0.49874916256524
+scalar UavWsnNetwork.node[0] energyConsumed 0.0012508374347648
+scalar UavWsnNetwork.node[0] isDead 0
+scalar UavWsnNetwork.node[0] controlPacketsSent 2
+scalar UavWsnNetwork.node[0] dataPacketsSent 1
+scalar UavWsnNetwork.node[0] roundsCompleted 2
+par UavWsnNetwork.node[1] typename "\"SensorNode\""
+par UavWsnNetwork.node[1] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[1] chProbability 0.1
+par UavWsnNetwork.node[1] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[1] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[1] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[1] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[1] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[1] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[1] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[1] chDutyCycle 0.3
+par UavWsnNetwork.node[1] memberDutyCycle 0.02
+par UavWsnNetwork.node[1] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[1] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[1] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[1] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[1] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[1] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[1] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[1] finalEnergy 0.49977078222328
+scalar UavWsnNetwork.node[1] energyConsumed 0.00022921777671923
+scalar UavWsnNetwork.node[1] isDead 0
+scalar UavWsnNetwork.node[1] controlPacketsSent 1
+scalar UavWsnNetwork.node[1] dataPacketsSent 1
+scalar UavWsnNetwork.node[1] roundsCompleted 2
+par UavWsnNetwork.node[2] typename "\"SensorNode\""
+par UavWsnNetwork.node[2] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[2] chProbability 0.1
+par UavWsnNetwork.node[2] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[2] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[2] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[2] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[2] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[2] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[2] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[2] chDutyCycle 0.3
+par UavWsnNetwork.node[2] memberDutyCycle 0.02
+par UavWsnNetwork.node[2] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[2] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[2] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[2] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[2] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[2] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[2] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[2] finalEnergy 0.49962772746251
+scalar UavWsnNetwork.node[2] energyConsumed 0.0003722725374911
+scalar UavWsnNetwork.node[2] isDead 0
+scalar UavWsnNetwork.node[2] controlPacketsSent 2
+scalar UavWsnNetwork.node[2] dataPacketsSent 2
+scalar UavWsnNetwork.node[2] roundsCompleted 2
+par UavWsnNetwork.node[3] typename "\"SensorNode\""
+par UavWsnNetwork.node[3] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[3] chProbability 0.1
+par UavWsnNetwork.node[3] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[3] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[3] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[3] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[3] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[3] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[3] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[3] chDutyCycle 0.3
+par UavWsnNetwork.node[3] memberDutyCycle 0.02
+par UavWsnNetwork.node[3] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[3] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[3] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[3] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[3] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[3] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[3] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[3] finalEnergy 0.49813995090704
+scalar UavWsnNetwork.node[3] energyConsumed 0.0018600490929561
+scalar UavWsnNetwork.node[3] isDead 0
+scalar UavWsnNetwork.node[3] controlPacketsSent 27
+scalar UavWsnNetwork.node[3] dataPacketsSent 1
+scalar UavWsnNetwork.node[3] roundsCompleted 2
+par UavWsnNetwork.node[4] typename "\"SensorNode\""
+par UavWsnNetwork.node[4] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[4] chProbability 0.1
+par UavWsnNetwork.node[4] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[4] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[4] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[4] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[4] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[4] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[4] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[4] chDutyCycle 0.3
+par UavWsnNetwork.node[4] memberDutyCycle 0.02
+par UavWsnNetwork.node[4] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[4] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[4] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[4] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[4] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[4] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[4] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[4] finalEnergy 0.49903372005576
+scalar UavWsnNetwork.node[4] energyConsumed 0.00096627994423737
+scalar UavWsnNetwork.node[4] isDead 0
+scalar UavWsnNetwork.node[4] controlPacketsSent 33
+scalar UavWsnNetwork.node[4] dataPacketsSent 1
+scalar UavWsnNetwork.node[4] roundsCompleted 2
+par UavWsnNetwork.node[5] typename "\"SensorNode\""
+par UavWsnNetwork.node[5] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[5] chProbability 0.1
+par UavWsnNetwork.node[5] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[5] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[5] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[5] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[5] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[5] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[5] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[5] chDutyCycle 0.3
+par UavWsnNetwork.node[5] memberDutyCycle 0.02
+par UavWsnNetwork.node[5] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[5] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[5] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[5] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[5] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[5] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[5] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[5] finalEnergy 0.49949583594596
+scalar UavWsnNetwork.node[5] energyConsumed 0.0005041640540369
+scalar UavWsnNetwork.node[5] isDead 0
+scalar UavWsnNetwork.node[5] controlPacketsSent 2
+scalar UavWsnNetwork.node[5] dataPacketsSent 2
+scalar UavWsnNetwork.node[5] roundsCompleted 2
+par UavWsnNetwork.node[6] typename "\"SensorNode\""
+par UavWsnNetwork.node[6] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[6] chProbability 0.1
+par UavWsnNetwork.node[6] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[6] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[6] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[6] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[6] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[6] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[6] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[6] chDutyCycle 0.3
+par UavWsnNetwork.node[6] memberDutyCycle 0.02
+par UavWsnNetwork.node[6] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[6] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[6] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[6] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[6] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[6] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[6] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[6] finalEnergy 0.49806743502234
+scalar UavWsnNetwork.node[6] energyConsumed 0.0019325649776554
+scalar UavWsnNetwork.node[6] isDead 0
+scalar UavWsnNetwork.node[6] controlPacketsSent 30
+scalar UavWsnNetwork.node[6] dataPacketsSent 1
+scalar UavWsnNetwork.node[6] roundsCompleted 2
+par UavWsnNetwork.node[7] typename "\"SensorNode\""
+par UavWsnNetwork.node[7] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[7] chProbability 0.1
+par UavWsnNetwork.node[7] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[7] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[7] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[7] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[7] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[7] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[7] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[7] chDutyCycle 0.3
+par UavWsnNetwork.node[7] memberDutyCycle 0.02
+par UavWsnNetwork.node[7] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[7] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[7] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[7] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[7] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[7] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[7] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[7] finalEnergy 0.49978258767349
+scalar UavWsnNetwork.node[7] energyConsumed 0.00021741232651386
+scalar UavWsnNetwork.node[7] isDead 0
+scalar UavWsnNetwork.node[7] controlPacketsSent 1
+scalar UavWsnNetwork.node[7] dataPacketsSent 1
+scalar UavWsnNetwork.node[7] roundsCompleted 2
+par UavWsnNetwork.node[8] typename "\"SensorNode\""
+par UavWsnNetwork.node[8] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[8] chProbability 0.1
+par UavWsnNetwork.node[8] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[8] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[8] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[8] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[8] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[8] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[8] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[8] chDutyCycle 0.3
+par UavWsnNetwork.node[8] memberDutyCycle 0.02
+par UavWsnNetwork.node[8] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[8] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[8] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[8] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[8] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[8] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[8] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[8] finalEnergy 0.49921936064212
+scalar UavWsnNetwork.node[8] energyConsumed 0.00078063935788433
+scalar UavWsnNetwork.node[8] isDead 0
+scalar UavWsnNetwork.node[8] controlPacketsSent 33
+scalar UavWsnNetwork.node[8] dataPacketsSent 1
+scalar UavWsnNetwork.node[8] roundsCompleted 2
+par UavWsnNetwork.node[9] typename "\"SensorNode\""
+par UavWsnNetwork.node[9] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[9] chProbability 0.1
+par UavWsnNetwork.node[9] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[9] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[9] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[9] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[9] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[9] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[9] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[9] chDutyCycle 0.3
+par UavWsnNetwork.node[9] memberDutyCycle 0.02
+par UavWsnNetwork.node[9] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[9] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[9] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[9] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[9] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[9] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[9] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[9] finalEnergy 0.49962784354803
+scalar UavWsnNetwork.node[9] energyConsumed 0.00037215645196531
+scalar UavWsnNetwork.node[9] isDead 0
+scalar UavWsnNetwork.node[9] controlPacketsSent 1
+scalar UavWsnNetwork.node[9] dataPacketsSent 1
+scalar UavWsnNetwork.node[9] roundsCompleted 2
+par UavWsnNetwork.node[10] typename "\"SensorNode\""
+par UavWsnNetwork.node[10] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[10] chProbability 0.1
+par UavWsnNetwork.node[10] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[10] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[10] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[10] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[10] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[10] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[10] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[10] chDutyCycle 0.3
+par UavWsnNetwork.node[10] memberDutyCycle 0.02
+par UavWsnNetwork.node[10] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[10] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[10] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[10] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[10] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[10] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[10] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[10] finalEnergy 0.4995643756658
+scalar UavWsnNetwork.node[10] energyConsumed 0.00043562433420113
+scalar UavWsnNetwork.node[10] isDead 0
+scalar UavWsnNetwork.node[10] controlPacketsSent 2
+scalar UavWsnNetwork.node[10] dataPacketsSent 2
+scalar UavWsnNetwork.node[10] roundsCompleted 2
+par UavWsnNetwork.node[11] typename "\"SensorNode\""
+par UavWsnNetwork.node[11] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[11] chProbability 0.1
+par UavWsnNetwork.node[11] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[11] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[11] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[11] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[11] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[11] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[11] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[11] chDutyCycle 0.3
+par UavWsnNetwork.node[11] memberDutyCycle 0.02
+par UavWsnNetwork.node[11] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[11] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[11] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[11] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[11] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[11] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[11] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[11] finalEnergy 0.49970219141532
+scalar UavWsnNetwork.node[11] energyConsumed 0.00029780858467893
+scalar UavWsnNetwork.node[11] isDead 0
+scalar UavWsnNetwork.node[11] controlPacketsSent 2
+scalar UavWsnNetwork.node[11] dataPacketsSent 2
+scalar UavWsnNetwork.node[11] roundsCompleted 2
+par UavWsnNetwork.node[12] typename "\"SensorNode\""
+par UavWsnNetwork.node[12] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[12] chProbability 0.1
+par UavWsnNetwork.node[12] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[12] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[12] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[12] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[12] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[12] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[12] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[12] chDutyCycle 0.3
+par UavWsnNetwork.node[12] memberDutyCycle 0.02
+par UavWsnNetwork.node[12] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[12] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[12] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[12] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[12] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[12] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[12] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[12] finalEnergy 0.49834487708814
+scalar UavWsnNetwork.node[12] energyConsumed 0.0016551229118611
+scalar UavWsnNetwork.node[12] isDead 0
+scalar UavWsnNetwork.node[12] controlPacketsSent 28
+scalar UavWsnNetwork.node[12] dataPacketsSent 1
+scalar UavWsnNetwork.node[12] roundsCompleted 2
+par UavWsnNetwork.node[13] typename "\"SensorNode\""
+par UavWsnNetwork.node[13] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[13] chProbability 0.1
+par UavWsnNetwork.node[13] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[13] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[13] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[13] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[13] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[13] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[13] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[13] chDutyCycle 0.3
+par UavWsnNetwork.node[13] memberDutyCycle 0.02
+par UavWsnNetwork.node[13] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[13] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[13] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[13] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[13] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[13] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[13] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[13] finalEnergy 0.49988261166
+scalar UavWsnNetwork.node[13] energyConsumed 0.00011738834
+scalar UavWsnNetwork.node[13] isDead 0
+scalar UavWsnNetwork.node[13] controlPacketsSent 1
+scalar UavWsnNetwork.node[13] dataPacketsSent 0
+scalar UavWsnNetwork.node[13] roundsCompleted 2
+par UavWsnNetwork.node[14] typename "\"SensorNode\""
+par UavWsnNetwork.node[14] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[14] chProbability 0.1
+par UavWsnNetwork.node[14] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[14] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[14] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[14] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[14] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[14] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[14] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[14] chDutyCycle 0.3
+par UavWsnNetwork.node[14] memberDutyCycle 0.02
+par UavWsnNetwork.node[14] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[14] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[14] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[14] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[14] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[14] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[14] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[14] finalEnergy 0.49964423982108
+scalar UavWsnNetwork.node[14] energyConsumed 0.00035576017891514
+scalar UavWsnNetwork.node[14] isDead 0
+scalar UavWsnNetwork.node[14] controlPacketsSent 2
+scalar UavWsnNetwork.node[14] dataPacketsSent 2
+scalar UavWsnNetwork.node[14] roundsCompleted 2
+par UavWsnNetwork.node[15] typename "\"SensorNode\""
+par UavWsnNetwork.node[15] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[15] chProbability 0.1
+par UavWsnNetwork.node[15] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[15] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[15] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[15] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[15] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[15] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[15] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[15] chDutyCycle 0.3
+par UavWsnNetwork.node[15] memberDutyCycle 0.02
+par UavWsnNetwork.node[15] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[15] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[15] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[15] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[15] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[15] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[15] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[15] finalEnergy 0.49983868292599
+scalar UavWsnNetwork.node[15] energyConsumed 0.00016131707400521
+scalar UavWsnNetwork.node[15] isDead 0
+scalar UavWsnNetwork.node[15] controlPacketsSent 1
+scalar UavWsnNetwork.node[15] dataPacketsSent 1
+scalar UavWsnNetwork.node[15] roundsCompleted 2
+par UavWsnNetwork.node[16] typename "\"SensorNode\""
+par UavWsnNetwork.node[16] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[16] chProbability 0.1
+par UavWsnNetwork.node[16] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[16] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[16] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[16] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[16] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[16] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[16] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[16] chDutyCycle 0.3
+par UavWsnNetwork.node[16] memberDutyCycle 0.02
+par UavWsnNetwork.node[16] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[16] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[16] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[16] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[16] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[16] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[16] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[16] finalEnergy 0.49959308347448
+scalar UavWsnNetwork.node[16] energyConsumed 0.00040691652552037
+scalar UavWsnNetwork.node[16] isDead 0
+scalar UavWsnNetwork.node[16] controlPacketsSent 2
+scalar UavWsnNetwork.node[16] dataPacketsSent 2
+scalar UavWsnNetwork.node[16] roundsCompleted 2
+par UavWsnNetwork.node[17] typename "\"SensorNode\""
+par UavWsnNetwork.node[17] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[17] chProbability 0.1
+par UavWsnNetwork.node[17] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[17] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[17] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[17] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[17] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[17] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[17] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[17] chDutyCycle 0.3
+par UavWsnNetwork.node[17] memberDutyCycle 0.02
+par UavWsnNetwork.node[17] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[17] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[17] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[17] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[17] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[17] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[17] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[17] finalEnergy 0.49967243743589
+scalar UavWsnNetwork.node[17] energyConsumed 0.00032756256411287
+scalar UavWsnNetwork.node[17] isDead 0
+scalar UavWsnNetwork.node[17] controlPacketsSent 1
+scalar UavWsnNetwork.node[17] dataPacketsSent 1
+scalar UavWsnNetwork.node[17] roundsCompleted 2
+par UavWsnNetwork.node[18] typename "\"SensorNode\""
+par UavWsnNetwork.node[18] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[18] chProbability 0.1
+par UavWsnNetwork.node[18] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[18] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[18] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[18] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[18] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[18] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[18] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[18] chDutyCycle 0.3
+par UavWsnNetwork.node[18] memberDutyCycle 0.02
+par UavWsnNetwork.node[18] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[18] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[18] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[18] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[18] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[18] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[18] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[18] finalEnergy 0.49937830923884
+scalar UavWsnNetwork.node[18] energyConsumed 0.0006216907611596
+scalar UavWsnNetwork.node[18] isDead 0
+scalar UavWsnNetwork.node[18] controlPacketsSent 2
+scalar UavWsnNetwork.node[18] dataPacketsSent 2
+scalar UavWsnNetwork.node[18] roundsCompleted 2
+par UavWsnNetwork.node[19] typename "\"SensorNode\""
+par UavWsnNetwork.node[19] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[19] chProbability 0.1
+par UavWsnNetwork.node[19] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[19] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[19] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[19] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[19] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[19] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[19] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[19] chDutyCycle 0.3
+par UavWsnNetwork.node[19] memberDutyCycle 0.02
+par UavWsnNetwork.node[19] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[19] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[19] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[19] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[19] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[19] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[19] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[19] finalEnergy 0.49914257346976
+scalar UavWsnNetwork.node[19] energyConsumed 0.0008574265302393
+scalar UavWsnNetwork.node[19] isDead 0
+scalar UavWsnNetwork.node[19] controlPacketsSent 36
+scalar UavWsnNetwork.node[19] dataPacketsSent 1
+scalar UavWsnNetwork.node[19] roundsCompleted 2
+par UavWsnNetwork.node[20] typename "\"SensorNode\""
+par UavWsnNetwork.node[20] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[20] chProbability 0.1
+par UavWsnNetwork.node[20] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[20] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[20] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[20] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[20] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[20] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[20] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[20] chDutyCycle 0.3
+par UavWsnNetwork.node[20] memberDutyCycle 0.02
+par UavWsnNetwork.node[20] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[20] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[20] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[20] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[20] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[20] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[20] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[20] finalEnergy 0.49827261677809
+scalar UavWsnNetwork.node[20] energyConsumed 0.0017273832219059
+scalar UavWsnNetwork.node[20] isDead 0
+scalar UavWsnNetwork.node[20] controlPacketsSent 34
+scalar UavWsnNetwork.node[20] dataPacketsSent 0
+scalar UavWsnNetwork.node[20] roundsCompleted 2
+par UavWsnNetwork.node[21] typename "\"SensorNode\""
+par UavWsnNetwork.node[21] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[21] chProbability 0.1
+par UavWsnNetwork.node[21] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[21] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[21] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[21] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[21] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[21] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[21] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[21] chDutyCycle 0.3
+par UavWsnNetwork.node[21] memberDutyCycle 0.02
+par UavWsnNetwork.node[21] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[21] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[21] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[21] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[21] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[21] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[21] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[21] finalEnergy 0.49981269455034
+scalar UavWsnNetwork.node[21] energyConsumed 0.00018730544965935
+scalar UavWsnNetwork.node[21] isDead 0
+scalar UavWsnNetwork.node[21] controlPacketsSent 1
+scalar UavWsnNetwork.node[21] dataPacketsSent 1
+scalar UavWsnNetwork.node[21] roundsCompleted 2
+par UavWsnNetwork.node[22] typename "\"SensorNode\""
+par UavWsnNetwork.node[22] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[22] chProbability 0.1
+par UavWsnNetwork.node[22] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[22] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[22] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[22] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[22] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[22] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[22] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[22] chDutyCycle 0.3
+par UavWsnNetwork.node[22] memberDutyCycle 0.02
+par UavWsnNetwork.node[22] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[22] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[22] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[22] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[22] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[22] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[22] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[22] finalEnergy 0.49986923776637
+scalar UavWsnNetwork.node[22] energyConsumed 0.00013076223362559
+scalar UavWsnNetwork.node[22] isDead 0
+scalar UavWsnNetwork.node[22] controlPacketsSent 1
+scalar UavWsnNetwork.node[22] dataPacketsSent 1
+scalar UavWsnNetwork.node[22] roundsCompleted 2
+par UavWsnNetwork.node[23] typename "\"SensorNode\""
+par UavWsnNetwork.node[23] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[23] chProbability 0.1
+par UavWsnNetwork.node[23] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[23] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[23] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[23] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[23] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[23] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[23] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[23] chDutyCycle 0.3
+par UavWsnNetwork.node[23] memberDutyCycle 0.02
+par UavWsnNetwork.node[23] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[23] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[23] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[23] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[23] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[23] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[23] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[23] finalEnergy 0.49820370043825
+scalar UavWsnNetwork.node[23] energyConsumed 0.0017962995617482
+scalar UavWsnNetwork.node[23] isDead 0
+scalar UavWsnNetwork.node[23] controlPacketsSent 28
+scalar UavWsnNetwork.node[23] dataPacketsSent 1
+scalar UavWsnNetwork.node[23] roundsCompleted 2
+par UavWsnNetwork.node[24] typename "\"SensorNode\""
+par UavWsnNetwork.node[24] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[24] chProbability 0.1
+par UavWsnNetwork.node[24] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[24] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[24] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[24] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[24] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[24] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[24] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[24] chDutyCycle 0.3
+par UavWsnNetwork.node[24] memberDutyCycle 0.02
+par UavWsnNetwork.node[24] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[24] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[24] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[24] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[24] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[24] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[24] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[24] finalEnergy 0.49965906140819
+scalar UavWsnNetwork.node[24] energyConsumed 0.00034093859181298
+scalar UavWsnNetwork.node[24] isDead 0
+scalar UavWsnNetwork.node[24] controlPacketsSent 1
+scalar UavWsnNetwork.node[24] dataPacketsSent 1
+scalar UavWsnNetwork.node[24] roundsCompleted 2
+par UavWsnNetwork.node[25] typename "\"SensorNode\""
+par UavWsnNetwork.node[25] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[25] chProbability 0.1
+par UavWsnNetwork.node[25] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[25] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[25] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[25] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[25] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[25] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[25] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[25] chDutyCycle 0.3
+par UavWsnNetwork.node[25] memberDutyCycle 0.02
+par UavWsnNetwork.node[25] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[25] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[25] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[25] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[25] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[25] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[25] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[25] finalEnergy 0.49969381555047
+scalar UavWsnNetwork.node[25] energyConsumed 0.00030618444953232
+scalar UavWsnNetwork.node[25] isDead 0
+scalar UavWsnNetwork.node[25] controlPacketsSent 1
+scalar UavWsnNetwork.node[25] dataPacketsSent 1
+scalar UavWsnNetwork.node[25] roundsCompleted 2
+par UavWsnNetwork.node[26] typename "\"SensorNode\""
+par UavWsnNetwork.node[26] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[26] chProbability 0.1
+par UavWsnNetwork.node[26] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[26] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[26] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[26] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[26] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[26] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[26] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[26] chDutyCycle 0.3
+par UavWsnNetwork.node[26] memberDutyCycle 0.02
+par UavWsnNetwork.node[26] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[26] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[26] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[26] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[26] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[26] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[26] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[26] finalEnergy 0.49956306993264
+scalar UavWsnNetwork.node[26] energyConsumed 0.00043693006736049
+scalar UavWsnNetwork.node[26] isDead 0
+scalar UavWsnNetwork.node[26] controlPacketsSent 2
+scalar UavWsnNetwork.node[26] dataPacketsSent 2
+scalar UavWsnNetwork.node[26] roundsCompleted 2
+par UavWsnNetwork.node[27] typename "\"SensorNode\""
+par UavWsnNetwork.node[27] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[27] chProbability 0.1
+par UavWsnNetwork.node[27] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[27] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[27] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[27] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[27] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[27] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[27] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[27] chDutyCycle 0.3
+par UavWsnNetwork.node[27] memberDutyCycle 0.02
+par UavWsnNetwork.node[27] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[27] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[27] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[27] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[27] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[27] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[27] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[27] finalEnergy 0.4996313840295
+scalar UavWsnNetwork.node[27] energyConsumed 0.00036861597049629
+scalar UavWsnNetwork.node[27] isDead 0
+scalar UavWsnNetwork.node[27] controlPacketsSent 2
+scalar UavWsnNetwork.node[27] dataPacketsSent 2
+scalar UavWsnNetwork.node[27] roundsCompleted 2
+par UavWsnNetwork.node[28] typename "\"SensorNode\""
+par UavWsnNetwork.node[28] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[28] chProbability 0.1
+par UavWsnNetwork.node[28] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[28] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[28] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[28] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[28] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[28] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[28] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[28] chDutyCycle 0.3
+par UavWsnNetwork.node[28] memberDutyCycle 0.02
+par UavWsnNetwork.node[28] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[28] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[28] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[28] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[28] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[28] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[28] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[28] finalEnergy 0.49967720173586
+scalar UavWsnNetwork.node[28] energyConsumed 0.00032279826414394
+scalar UavWsnNetwork.node[28] isDead 0
+scalar UavWsnNetwork.node[28] controlPacketsSent 2
+scalar UavWsnNetwork.node[28] dataPacketsSent 2
+scalar UavWsnNetwork.node[28] roundsCompleted 2
+par UavWsnNetwork.node[29] typename "\"SensorNode\""
+par UavWsnNetwork.node[29] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[29] chProbability 0.1
+par UavWsnNetwork.node[29] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[29] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[29] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[29] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[29] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[29] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[29] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[29] chDutyCycle 0.3
+par UavWsnNetwork.node[29] memberDutyCycle 0.02
+par UavWsnNetwork.node[29] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[29] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[29] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[29] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[29] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[29] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[29] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[29] finalEnergy 0.4997684149764
+scalar UavWsnNetwork.node[29] energyConsumed 0.00023158502360372
+scalar UavWsnNetwork.node[29] isDead 0
+scalar UavWsnNetwork.node[29] controlPacketsSent 1
+scalar UavWsnNetwork.node[29] dataPacketsSent 1
+scalar UavWsnNetwork.node[29] roundsCompleted 2
+par UavWsnNetwork.node[30] typename "\"SensorNode\""
+par UavWsnNetwork.node[30] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[30] chProbability 0.1
+par UavWsnNetwork.node[30] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[30] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[30] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[30] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[30] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[30] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[30] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[30] chDutyCycle 0.3
+par UavWsnNetwork.node[30] memberDutyCycle 0.02
+par UavWsnNetwork.node[30] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[30] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[30] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[30] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[30] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[30] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[30] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[30] finalEnergy 0.4996715439611
+scalar UavWsnNetwork.node[30] energyConsumed 0.00032845603889848
+scalar UavWsnNetwork.node[30] isDead 0
+scalar UavWsnNetwork.node[30] controlPacketsSent 2
+scalar UavWsnNetwork.node[30] dataPacketsSent 2
+scalar UavWsnNetwork.node[30] roundsCompleted 2
+par UavWsnNetwork.node[31] typename "\"SensorNode\""
+par UavWsnNetwork.node[31] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[31] chProbability 0.1
+par UavWsnNetwork.node[31] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[31] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[31] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[31] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[31] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[31] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[31] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[31] chDutyCycle 0.3
+par UavWsnNetwork.node[31] memberDutyCycle 0.02
+par UavWsnNetwork.node[31] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[31] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[31] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[31] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[31] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[31] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[31] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[31] finalEnergy 0.49966563258523
+scalar UavWsnNetwork.node[31] energyConsumed 0.00033436741476593
+scalar UavWsnNetwork.node[31] isDead 0
+scalar UavWsnNetwork.node[31] controlPacketsSent 1
+scalar UavWsnNetwork.node[31] dataPacketsSent 1
+scalar UavWsnNetwork.node[31] roundsCompleted 2
+par UavWsnNetwork.node[32] typename "\"SensorNode\""
+par UavWsnNetwork.node[32] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[32] chProbability 0.1
+par UavWsnNetwork.node[32] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[32] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[32] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[32] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[32] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[32] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[32] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[32] chDutyCycle 0.3
+par UavWsnNetwork.node[32] memberDutyCycle 0.02
+par UavWsnNetwork.node[32] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[32] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[32] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[32] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[32] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[32] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[32] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[32] finalEnergy 0.4994638572897
+scalar UavWsnNetwork.node[32] energyConsumed 0.0005361427102961
+scalar UavWsnNetwork.node[32] isDead 0
+scalar UavWsnNetwork.node[32] controlPacketsSent 2
+scalar UavWsnNetwork.node[32] dataPacketsSent 2
+scalar UavWsnNetwork.node[32] roundsCompleted 2
+par UavWsnNetwork.node[33] typename "\"SensorNode\""
+par UavWsnNetwork.node[33] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[33] chProbability 0.1
+par UavWsnNetwork.node[33] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[33] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[33] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[33] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[33] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[33] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[33] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[33] chDutyCycle 0.3
+par UavWsnNetwork.node[33] memberDutyCycle 0.02
+par UavWsnNetwork.node[33] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[33] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[33] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[33] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[33] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[33] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[33] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[33] finalEnergy 0.49941646150727
+scalar UavWsnNetwork.node[33] energyConsumed 0.00058353849272855
+scalar UavWsnNetwork.node[33] isDead 0
+scalar UavWsnNetwork.node[33] controlPacketsSent 2
+scalar UavWsnNetwork.node[33] dataPacketsSent 2
+scalar UavWsnNetwork.node[33] roundsCompleted 2
+par UavWsnNetwork.node[34] typename "\"SensorNode\""
+par UavWsnNetwork.node[34] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[34] chProbability 0.1
+par UavWsnNetwork.node[34] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[34] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[34] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[34] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[34] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[34] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[34] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[34] chDutyCycle 0.3
+par UavWsnNetwork.node[34] memberDutyCycle 0.02
+par UavWsnNetwork.node[34] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[34] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[34] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[34] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[34] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[34] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[34] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[34] finalEnergy 0.49875308242371
+scalar UavWsnNetwork.node[34] energyConsumed 0.0012469175762859
+scalar UavWsnNetwork.node[34] isDead 0
+scalar UavWsnNetwork.node[34] controlPacketsSent 2
+scalar UavWsnNetwork.node[34] dataPacketsSent 1
+scalar UavWsnNetwork.node[34] roundsCompleted 2
+par UavWsnNetwork.node[35] typename "\"SensorNode\""
+par UavWsnNetwork.node[35] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[35] chProbability 0.1
+par UavWsnNetwork.node[35] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[35] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[35] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[35] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[35] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[35] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[35] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[35] chDutyCycle 0.3
+par UavWsnNetwork.node[35] memberDutyCycle 0.02
+par UavWsnNetwork.node[35] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[35] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[35] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[35] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[35] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[35] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[35] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[35] finalEnergy 0.49980251933481
+scalar UavWsnNetwork.node[35] energyConsumed 0.00019748066519431
+scalar UavWsnNetwork.node[35] isDead 0
+scalar UavWsnNetwork.node[35] controlPacketsSent 11
+scalar UavWsnNetwork.node[35] dataPacketsSent 0
+scalar UavWsnNetwork.node[35] roundsCompleted 2
+par UavWsnNetwork.node[36] typename "\"SensorNode\""
+par UavWsnNetwork.node[36] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[36] chProbability 0.1
+par UavWsnNetwork.node[36] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[36] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[36] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[36] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[36] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[36] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[36] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[36] chDutyCycle 0.3
+par UavWsnNetwork.node[36] memberDutyCycle 0.02
+par UavWsnNetwork.node[36] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[36] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[36] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[36] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[36] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[36] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[36] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[36] finalEnergy 0.49949625971031
+scalar UavWsnNetwork.node[36] energyConsumed 0.00050374028969146
+scalar UavWsnNetwork.node[36] isDead 0
+scalar UavWsnNetwork.node[36] controlPacketsSent 2
+scalar UavWsnNetwork.node[36] dataPacketsSent 2
+scalar UavWsnNetwork.node[36] roundsCompleted 2
+par UavWsnNetwork.node[37] typename "\"SensorNode\""
+par UavWsnNetwork.node[37] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[37] chProbability 0.1
+par UavWsnNetwork.node[37] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[37] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[37] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[37] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[37] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[37] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[37] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[37] chDutyCycle 0.3
+par UavWsnNetwork.node[37] memberDutyCycle 0.02
+par UavWsnNetwork.node[37] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[37] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[37] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[37] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[37] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[37] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[37] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[37] finalEnergy 0.49969189813811
+scalar UavWsnNetwork.node[37] energyConsumed 0.00030810186188527
+scalar UavWsnNetwork.node[37] isDead 0
+scalar UavWsnNetwork.node[37] controlPacketsSent 2
+scalar UavWsnNetwork.node[37] dataPacketsSent 2
+scalar UavWsnNetwork.node[37] roundsCompleted 2
+par UavWsnNetwork.node[38] typename "\"SensorNode\""
+par UavWsnNetwork.node[38] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[38] chProbability 0.1
+par UavWsnNetwork.node[38] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[38] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[38] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[38] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[38] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[38] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[38] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[38] chDutyCycle 0.3
+par UavWsnNetwork.node[38] memberDutyCycle 0.02
+par UavWsnNetwork.node[38] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[38] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[38] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[38] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[38] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[38] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[38] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[38] finalEnergy 0.49976459225596
+scalar UavWsnNetwork.node[38] energyConsumed 0.00023540774404105
+scalar UavWsnNetwork.node[38] isDead 0
+scalar UavWsnNetwork.node[38] controlPacketsSent 1
+scalar UavWsnNetwork.node[38] dataPacketsSent 1
+scalar UavWsnNetwork.node[38] roundsCompleted 2
+par UavWsnNetwork.node[39] typename "\"SensorNode\""
+par UavWsnNetwork.node[39] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[39] chProbability 0.1
+par UavWsnNetwork.node[39] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[39] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[39] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[39] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[39] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[39] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[39] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[39] chDutyCycle 0.3
+par UavWsnNetwork.node[39] memberDutyCycle 0.02
+par UavWsnNetwork.node[39] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[39] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[39] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[39] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[39] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[39] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[39] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[39] finalEnergy 0.49843175351285
+scalar UavWsnNetwork.node[39] energyConsumed 0.0015682464871498
+scalar UavWsnNetwork.node[39] isDead 0
+scalar UavWsnNetwork.node[39] controlPacketsSent 26
+scalar UavWsnNetwork.node[39] dataPacketsSent 0
+scalar UavWsnNetwork.node[39] roundsCompleted 2
+par UavWsnNetwork.node[40] typename "\"SensorNode\""
+par UavWsnNetwork.node[40] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[40] chProbability 0.1
+par UavWsnNetwork.node[40] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[40] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[40] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[40] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[40] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[40] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[40] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[40] chDutyCycle 0.3
+par UavWsnNetwork.node[40] memberDutyCycle 0.02
+par UavWsnNetwork.node[40] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[40] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[40] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[40] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[40] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[40] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[40] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[40] finalEnergy 0.49981269250842
+scalar UavWsnNetwork.node[40] energyConsumed 0.00018730749158131
+scalar UavWsnNetwork.node[40] isDead 0
+scalar UavWsnNetwork.node[40] controlPacketsSent 1
+scalar UavWsnNetwork.node[40] dataPacketsSent 1
+scalar UavWsnNetwork.node[40] roundsCompleted 2
+par UavWsnNetwork.node[41] typename "\"SensorNode\""
+par UavWsnNetwork.node[41] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[41] chProbability 0.1
+par UavWsnNetwork.node[41] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[41] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[41] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[41] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[41] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[41] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[41] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[41] chDutyCycle 0.3
+par UavWsnNetwork.node[41] memberDutyCycle 0.02
+par UavWsnNetwork.node[41] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[41] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[41] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[41] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[41] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[41] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[41] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[41] finalEnergy 0.49949729263052
+scalar UavWsnNetwork.node[41] energyConsumed 0.00050270736947681
+scalar UavWsnNetwork.node[41] isDead 0
+scalar UavWsnNetwork.node[41] controlPacketsSent 2
+scalar UavWsnNetwork.node[41] dataPacketsSent 2
+scalar UavWsnNetwork.node[41] roundsCompleted 2
+par UavWsnNetwork.node[42] typename "\"SensorNode\""
+par UavWsnNetwork.node[42] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[42] chProbability 0.1
+par UavWsnNetwork.node[42] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[42] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[42] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[42] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[42] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[42] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[42] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[42] chDutyCycle 0.3
+par UavWsnNetwork.node[42] memberDutyCycle 0.02
+par UavWsnNetwork.node[42] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[42] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[42] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[42] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[42] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[42] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[42] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[42] finalEnergy 0.49887882615864
+scalar UavWsnNetwork.node[42] energyConsumed 0.0011211738413621
+scalar UavWsnNetwork.node[42] isDead 0
+scalar UavWsnNetwork.node[42] controlPacketsSent 44
+scalar UavWsnNetwork.node[42] dataPacketsSent 1
+scalar UavWsnNetwork.node[42] roundsCompleted 2
+par UavWsnNetwork.node[43] typename "\"SensorNode\""
+par UavWsnNetwork.node[43] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[43] chProbability 0.1
+par UavWsnNetwork.node[43] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[43] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[43] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[43] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[43] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[43] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[43] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[43] chDutyCycle 0.3
+par UavWsnNetwork.node[43] memberDutyCycle 0.02
+par UavWsnNetwork.node[43] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[43] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[43] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[43] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[43] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[43] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[43] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[43] finalEnergy 0.4987278082151
+scalar UavWsnNetwork.node[43] energyConsumed 0.001272191784897
+scalar UavWsnNetwork.node[43] isDead 0
+scalar UavWsnNetwork.node[43] controlPacketsSent 2
+scalar UavWsnNetwork.node[43] dataPacketsSent 1
+scalar UavWsnNetwork.node[43] roundsCompleted 2
+par UavWsnNetwork.node[44] typename "\"SensorNode\""
+par UavWsnNetwork.node[44] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[44] chProbability 0.1
+par UavWsnNetwork.node[44] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[44] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[44] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[44] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[44] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[44] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[44] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[44] chDutyCycle 0.3
+par UavWsnNetwork.node[44] memberDutyCycle 0.02
+par UavWsnNetwork.node[44] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[44] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[44] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[44] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[44] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[44] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[44] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[44] finalEnergy 0.49831664907434
+scalar UavWsnNetwork.node[44] energyConsumed 0.0016833509256622
+scalar UavWsnNetwork.node[44] isDead 0
+scalar UavWsnNetwork.node[44] controlPacketsSent 18
+scalar UavWsnNetwork.node[44] dataPacketsSent 1
+scalar UavWsnNetwork.node[44] roundsCompleted 2
+par UavWsnNetwork.node[45] typename "\"SensorNode\""
+par UavWsnNetwork.node[45] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[45] chProbability 0.1
+par UavWsnNetwork.node[45] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[45] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[45] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[45] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[45] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[45] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[45] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[45] chDutyCycle 0.3
+par UavWsnNetwork.node[45] memberDutyCycle 0.02
+par UavWsnNetwork.node[45] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[45] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[45] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[45] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[45] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[45] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[45] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[45] finalEnergy 0.49807619991571
+scalar UavWsnNetwork.node[45] energyConsumed 0.0019238000842915
+scalar UavWsnNetwork.node[45] isDead 0
+scalar UavWsnNetwork.node[45] controlPacketsSent 30
+scalar UavWsnNetwork.node[45] dataPacketsSent 1
+scalar UavWsnNetwork.node[45] roundsCompleted 2
+par UavWsnNetwork.node[46] typename "\"SensorNode\""
+par UavWsnNetwork.node[46] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[46] chProbability 0.1
+par UavWsnNetwork.node[46] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[46] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[46] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[46] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[46] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[46] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[46] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[46] chDutyCycle 0.3
+par UavWsnNetwork.node[46] memberDutyCycle 0.02
+par UavWsnNetwork.node[46] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[46] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[46] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[46] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[46] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[46] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[46] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[46] finalEnergy 0.49988261551094
+scalar UavWsnNetwork.node[46] energyConsumed 0.00011738448905808
+scalar UavWsnNetwork.node[46] isDead 0
+scalar UavWsnNetwork.node[46] controlPacketsSent 1
+scalar UavWsnNetwork.node[46] dataPacketsSent 1
+scalar UavWsnNetwork.node[46] roundsCompleted 2
+par UavWsnNetwork.node[47] typename "\"SensorNode\""
+par UavWsnNetwork.node[47] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[47] chProbability 0.1
+par UavWsnNetwork.node[47] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[47] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[47] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[47] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[47] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[47] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[47] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[47] chDutyCycle 0.3
+par UavWsnNetwork.node[47] memberDutyCycle 0.02
+par UavWsnNetwork.node[47] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[47] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[47] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[47] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[47] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[47] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[47] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[47] finalEnergy 0.49958774650175
+scalar UavWsnNetwork.node[47] energyConsumed 0.00041225349824989
+scalar UavWsnNetwork.node[47] isDead 0
+scalar UavWsnNetwork.node[47] controlPacketsSent 2
+scalar UavWsnNetwork.node[47] dataPacketsSent 2
+scalar UavWsnNetwork.node[47] roundsCompleted 2
+par UavWsnNetwork.node[48] typename "\"SensorNode\""
+par UavWsnNetwork.node[48] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[48] chProbability 0.1
+par UavWsnNetwork.node[48] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[48] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[48] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[48] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[48] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[48] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[48] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[48] chDutyCycle 0.3
+par UavWsnNetwork.node[48] memberDutyCycle 0.02
+par UavWsnNetwork.node[48] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[48] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[48] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[48] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[48] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[48] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[48] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[48] finalEnergy 0.49970267018753
+scalar UavWsnNetwork.node[48] energyConsumed 0.0002973298124679
+scalar UavWsnNetwork.node[48] isDead 0
+scalar UavWsnNetwork.node[48] controlPacketsSent 2
+scalar UavWsnNetwork.node[48] dataPacketsSent 2
+scalar UavWsnNetwork.node[48] roundsCompleted 2
+par UavWsnNetwork.node[49] typename "\"SensorNode\""
+par UavWsnNetwork.node[49] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[49] chProbability 0.1
+par UavWsnNetwork.node[49] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[49] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[49] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[49] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[49] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[49] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[49] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[49] chDutyCycle 0.3
+par UavWsnNetwork.node[49] memberDutyCycle 0.02
+par UavWsnNetwork.node[49] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[49] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[49] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[49] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[49] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[49] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[49] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[49] finalEnergy 0.49928144537578
+scalar UavWsnNetwork.node[49] energyConsumed 0.00071855462421646
+scalar UavWsnNetwork.node[49] isDead 0
+scalar UavWsnNetwork.node[49] controlPacketsSent 24
+scalar UavWsnNetwork.node[49] dataPacketsSent 1
+scalar UavWsnNetwork.node[49] roundsCompleted 2
+par UavWsnNetwork.node[50] typename "\"SensorNode\""
+par UavWsnNetwork.node[50] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[50] chProbability 0.1
+par UavWsnNetwork.node[50] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[50] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[50] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[50] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[50] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[50] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[50] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[50] chDutyCycle 0.3
+par UavWsnNetwork.node[50] memberDutyCycle 0.02
+par UavWsnNetwork.node[50] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[50] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[50] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[50] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[50] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[50] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[50] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[50] finalEnergy 0.49966343506148
+scalar UavWsnNetwork.node[50] energyConsumed 0.00033656493851614
+scalar UavWsnNetwork.node[50] isDead 0
+scalar UavWsnNetwork.node[50] controlPacketsSent 2
+scalar UavWsnNetwork.node[50] dataPacketsSent 2
+scalar UavWsnNetwork.node[50] roundsCompleted 2
+par UavWsnNetwork.node[51] typename "\"SensorNode\""
+par UavWsnNetwork.node[51] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[51] chProbability 0.1
+par UavWsnNetwork.node[51] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[51] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[51] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[51] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[51] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[51] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[51] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[51] chDutyCycle 0.3
+par UavWsnNetwork.node[51] memberDutyCycle 0.02
+par UavWsnNetwork.node[51] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[51] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[51] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[51] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[51] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[51] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[51] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[51] finalEnergy 0.49982954411329
+scalar UavWsnNetwork.node[51] energyConsumed 0.00017045588671409
+scalar UavWsnNetwork.node[51] isDead 0
+scalar UavWsnNetwork.node[51] controlPacketsSent 1
+scalar UavWsnNetwork.node[51] dataPacketsSent 1
+scalar UavWsnNetwork.node[51] roundsCompleted 2
+par UavWsnNetwork.node[52] typename "\"SensorNode\""
+par UavWsnNetwork.node[52] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[52] chProbability 0.1
+par UavWsnNetwork.node[52] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[52] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[52] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[52] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[52] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[52] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[52] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[52] chDutyCycle 0.3
+par UavWsnNetwork.node[52] memberDutyCycle 0.02
+par UavWsnNetwork.node[52] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[52] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[52] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[52] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[52] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[52] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[52] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[52] finalEnergy 0.49961427778492
+scalar UavWsnNetwork.node[52] energyConsumed 0.00038572221508488
+scalar UavWsnNetwork.node[52] isDead 0
+scalar UavWsnNetwork.node[52] controlPacketsSent 2
+scalar UavWsnNetwork.node[52] dataPacketsSent 2
+scalar UavWsnNetwork.node[52] roundsCompleted 2
+par UavWsnNetwork.node[53] typename "\"SensorNode\""
+par UavWsnNetwork.node[53] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[53] chProbability 0.1
+par UavWsnNetwork.node[53] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[53] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[53] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[53] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[53] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[53] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[53] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[53] chDutyCycle 0.3
+par UavWsnNetwork.node[53] memberDutyCycle 0.02
+par UavWsnNetwork.node[53] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[53] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[53] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[53] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[53] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[53] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[53] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[53] finalEnergy 0.49952526719132
+scalar UavWsnNetwork.node[53] energyConsumed 0.00047473280867811
+scalar UavWsnNetwork.node[53] isDead 0
+scalar UavWsnNetwork.node[53] controlPacketsSent 2
+scalar UavWsnNetwork.node[53] dataPacketsSent 2
+scalar UavWsnNetwork.node[53] roundsCompleted 2
+par UavWsnNetwork.node[54] typename "\"SensorNode\""
+par UavWsnNetwork.node[54] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[54] chProbability 0.1
+par UavWsnNetwork.node[54] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[54] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[54] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[54] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[54] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[54] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[54] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[54] chDutyCycle 0.3
+par UavWsnNetwork.node[54] memberDutyCycle 0.02
+par UavWsnNetwork.node[54] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[54] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[54] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[54] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[54] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[54] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[54] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[54] finalEnergy 0.49972929835929
+scalar UavWsnNetwork.node[54] energyConsumed 0.00027070164070905
+scalar UavWsnNetwork.node[54] isDead 0
+scalar UavWsnNetwork.node[54] controlPacketsSent 1
+scalar UavWsnNetwork.node[54] dataPacketsSent 1
+scalar UavWsnNetwork.node[54] roundsCompleted 2
+par UavWsnNetwork.node[55] typename "\"SensorNode\""
+par UavWsnNetwork.node[55] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[55] chProbability 0.1
+par UavWsnNetwork.node[55] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[55] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[55] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[55] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[55] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[55] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[55] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[55] chDutyCycle 0.3
+par UavWsnNetwork.node[55] memberDutyCycle 0.02
+par UavWsnNetwork.node[55] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[55] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[55] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[55] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[55] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[55] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[55] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[55] finalEnergy 0.49873069639065
+scalar UavWsnNetwork.node[55] energyConsumed 0.0012693036093505
+scalar UavWsnNetwork.node[55] isDead 0
+scalar UavWsnNetwork.node[55] controlPacketsSent 2
+scalar UavWsnNetwork.node[55] dataPacketsSent 1
+scalar UavWsnNetwork.node[55] roundsCompleted 2
+par UavWsnNetwork.node[56] typename "\"SensorNode\""
+par UavWsnNetwork.node[56] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[56] chProbability 0.1
+par UavWsnNetwork.node[56] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[56] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[56] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[56] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[56] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[56] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[56] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[56] chDutyCycle 0.3
+par UavWsnNetwork.node[56] memberDutyCycle 0.02
+par UavWsnNetwork.node[56] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[56] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[56] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[56] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[56] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[56] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[56] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[56] finalEnergy 0.49841693029178
+scalar UavWsnNetwork.node[56] energyConsumed 0.0015830697082206
+scalar UavWsnNetwork.node[56] isDead 0
+scalar UavWsnNetwork.node[56] controlPacketsSent 30
+scalar UavWsnNetwork.node[56] dataPacketsSent 0
+scalar UavWsnNetwork.node[56] roundsCompleted 2
+par UavWsnNetwork.node[57] typename "\"SensorNode\""
+par UavWsnNetwork.node[57] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[57] chProbability 0.1
+par UavWsnNetwork.node[57] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[57] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[57] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[57] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[57] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[57] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[57] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[57] chDutyCycle 0.3
+par UavWsnNetwork.node[57] memberDutyCycle 0.02
+par UavWsnNetwork.node[57] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[57] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[57] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[57] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[57] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[57] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[57] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[57] finalEnergy 0.49955958945719
+scalar UavWsnNetwork.node[57] energyConsumed 0.00044041054281053
+scalar UavWsnNetwork.node[57] isDead 0
+scalar UavWsnNetwork.node[57] controlPacketsSent 2
+scalar UavWsnNetwork.node[57] dataPacketsSent 2
+scalar UavWsnNetwork.node[57] roundsCompleted 2
+par UavWsnNetwork.node[58] typename "\"SensorNode\""
+par UavWsnNetwork.node[58] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[58] chProbability 0.1
+par UavWsnNetwork.node[58] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[58] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[58] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[58] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[58] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[58] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[58] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[58] chDutyCycle 0.3
+par UavWsnNetwork.node[58] memberDutyCycle 0.02
+par UavWsnNetwork.node[58] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[58] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[58] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[58] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[58] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[58] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[58] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[58] finalEnergy 0.49962037135003
+scalar UavWsnNetwork.node[58] energyConsumed 0.00037962864996661
+scalar UavWsnNetwork.node[58] isDead 0
+scalar UavWsnNetwork.node[58] controlPacketsSent 2
+scalar UavWsnNetwork.node[58] dataPacketsSent 2
+scalar UavWsnNetwork.node[58] roundsCompleted 2
+par UavWsnNetwork.node[59] typename "\"SensorNode\""
+par UavWsnNetwork.node[59] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[59] chProbability 0.1
+par UavWsnNetwork.node[59] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[59] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[59] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[59] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[59] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[59] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[59] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[59] chDutyCycle 0.3
+par UavWsnNetwork.node[59] memberDutyCycle 0.02
+par UavWsnNetwork.node[59] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[59] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[59] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[59] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[59] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[59] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[59] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[59] finalEnergy 0.49906296851074
+scalar UavWsnNetwork.node[59] energyConsumed 0.00093703148925977
+scalar UavWsnNetwork.node[59] isDead 0
+scalar UavWsnNetwork.node[59] controlPacketsSent 36
+scalar UavWsnNetwork.node[59] dataPacketsSent 1
+scalar UavWsnNetwork.node[59] roundsCompleted 2
+par UavWsnNetwork.node[60] typename "\"SensorNode\""
+par UavWsnNetwork.node[60] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[60] chProbability 0.1
+par UavWsnNetwork.node[60] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[60] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[60] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[60] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[60] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[60] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[60] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[60] chDutyCycle 0.3
+par UavWsnNetwork.node[60] memberDutyCycle 0.02
+par UavWsnNetwork.node[60] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[60] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[60] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[60] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[60] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[60] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[60] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[60] finalEnergy 0.49954745560931
+scalar UavWsnNetwork.node[60] energyConsumed 0.00045254439068701
+scalar UavWsnNetwork.node[60] isDead 0
+scalar UavWsnNetwork.node[60] controlPacketsSent 2
+scalar UavWsnNetwork.node[60] dataPacketsSent 2
+scalar UavWsnNetwork.node[60] roundsCompleted 2
+par UavWsnNetwork.node[61] typename "\"SensorNode\""
+par UavWsnNetwork.node[61] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[61] chProbability 0.1
+par UavWsnNetwork.node[61] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[61] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[61] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[61] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[61] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[61] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[61] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[61] chDutyCycle 0.3
+par UavWsnNetwork.node[61] memberDutyCycle 0.02
+par UavWsnNetwork.node[61] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[61] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[61] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[61] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[61] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[61] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[61] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[61] finalEnergy 0.49961802334456
+scalar UavWsnNetwork.node[61] energyConsumed 0.00038197665544093
+scalar UavWsnNetwork.node[61] isDead 0
+scalar UavWsnNetwork.node[61] controlPacketsSent 2
+scalar UavWsnNetwork.node[61] dataPacketsSent 2
+scalar UavWsnNetwork.node[61] roundsCompleted 2
+par UavWsnNetwork.node[62] typename "\"SensorNode\""
+par UavWsnNetwork.node[62] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[62] chProbability 0.1
+par UavWsnNetwork.node[62] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[62] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[62] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[62] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[62] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[62] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[62] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[62] chDutyCycle 0.3
+par UavWsnNetwork.node[62] memberDutyCycle 0.02
+par UavWsnNetwork.node[62] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[62] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[62] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[62] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[62] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[62] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[62] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[62] finalEnergy 0.49955567474142
+scalar UavWsnNetwork.node[62] energyConsumed 0.0004443252585831
+scalar UavWsnNetwork.node[62] isDead 0
+scalar UavWsnNetwork.node[62] controlPacketsSent 2
+scalar UavWsnNetwork.node[62] dataPacketsSent 2
+scalar UavWsnNetwork.node[62] roundsCompleted 2
+par UavWsnNetwork.node[63] typename "\"SensorNode\""
+par UavWsnNetwork.node[63] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[63] chProbability 0.1
+par UavWsnNetwork.node[63] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[63] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[63] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[63] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[63] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[63] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[63] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[63] chDutyCycle 0.3
+par UavWsnNetwork.node[63] memberDutyCycle 0.02
+par UavWsnNetwork.node[63] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[63] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[63] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[63] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[63] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[63] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[63] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[63] finalEnergy 0.49952101026269
+scalar UavWsnNetwork.node[63] energyConsumed 0.00047898973730843
+scalar UavWsnNetwork.node[63] isDead 0
+scalar UavWsnNetwork.node[63] controlPacketsSent 2
+scalar UavWsnNetwork.node[63] dataPacketsSent 2
+scalar UavWsnNetwork.node[63] roundsCompleted 2
+par UavWsnNetwork.node[64] typename "\"SensorNode\""
+par UavWsnNetwork.node[64] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[64] chProbability 0.1
+par UavWsnNetwork.node[64] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[64] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[64] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[64] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[64] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[64] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[64] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[64] chDutyCycle 0.3
+par UavWsnNetwork.node[64] memberDutyCycle 0.02
+par UavWsnNetwork.node[64] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[64] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[64] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[64] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[64] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[64] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[64] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[64] finalEnergy 0.49956860912073
+scalar UavWsnNetwork.node[64] energyConsumed 0.0004313908792679
+scalar UavWsnNetwork.node[64] isDead 0
+scalar UavWsnNetwork.node[64] controlPacketsSent 2
+scalar UavWsnNetwork.node[64] dataPacketsSent 2
+scalar UavWsnNetwork.node[64] roundsCompleted 2
+par UavWsnNetwork.node[65] typename "\"SensorNode\""
+par UavWsnNetwork.node[65] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[65] chProbability 0.1
+par UavWsnNetwork.node[65] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[65] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[65] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[65] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[65] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[65] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[65] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[65] chDutyCycle 0.3
+par UavWsnNetwork.node[65] memberDutyCycle 0.02
+par UavWsnNetwork.node[65] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[65] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[65] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[65] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[65] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[65] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[65] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[65] finalEnergy 0.49861007316636
+scalar UavWsnNetwork.node[65] energyConsumed 0.0013899268336359
+scalar UavWsnNetwork.node[65] isDead 0
+scalar UavWsnNetwork.node[65] controlPacketsSent 12
+scalar UavWsnNetwork.node[65] dataPacketsSent 0
+scalar UavWsnNetwork.node[65] roundsCompleted 2
+par UavWsnNetwork.node[66] typename "\"SensorNode\""
+par UavWsnNetwork.node[66] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[66] chProbability 0.1
+par UavWsnNetwork.node[66] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[66] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[66] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[66] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[66] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[66] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[66] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[66] chDutyCycle 0.3
+par UavWsnNetwork.node[66] memberDutyCycle 0.02
+par UavWsnNetwork.node[66] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[66] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[66] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[66] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[66] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[66] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[66] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[66] finalEnergy 0.4995108011139
+scalar UavWsnNetwork.node[66] energyConsumed 0.00048919888610441
+scalar UavWsnNetwork.node[66] isDead 0
+scalar UavWsnNetwork.node[66] controlPacketsSent 2
+scalar UavWsnNetwork.node[66] dataPacketsSent 2
+scalar UavWsnNetwork.node[66] roundsCompleted 2
+par UavWsnNetwork.node[67] typename "\"SensorNode\""
+par UavWsnNetwork.node[67] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[67] chProbability 0.1
+par UavWsnNetwork.node[67] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[67] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[67] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[67] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[67] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[67] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[67] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[67] chDutyCycle 0.3
+par UavWsnNetwork.node[67] memberDutyCycle 0.02
+par UavWsnNetwork.node[67] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[67] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[67] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[67] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[67] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[67] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[67] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[67] finalEnergy 0.49970267009418
+scalar UavWsnNetwork.node[67] energyConsumed 0.00029732990582419
+scalar UavWsnNetwork.node[67] isDead 0
+scalar UavWsnNetwork.node[67] controlPacketsSent 2
+scalar UavWsnNetwork.node[67] dataPacketsSent 2
+scalar UavWsnNetwork.node[67] roundsCompleted 2
+par UavWsnNetwork.node[68] typename "\"SensorNode\""
+par UavWsnNetwork.node[68] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[68] chProbability 0.1
+par UavWsnNetwork.node[68] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[68] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[68] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[68] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[68] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[68] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[68] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[68] chDutyCycle 0.3
+par UavWsnNetwork.node[68] memberDutyCycle 0.02
+par UavWsnNetwork.node[68] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[68] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[68] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[68] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[68] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[68] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[68] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[68] finalEnergy 0.49987605038055
+scalar UavWsnNetwork.node[68] energyConsumed 0.00012394961945028
+scalar UavWsnNetwork.node[68] isDead 0
+scalar UavWsnNetwork.node[68] controlPacketsSent 1
+scalar UavWsnNetwork.node[68] dataPacketsSent 1
+scalar UavWsnNetwork.node[68] roundsCompleted 2
+par UavWsnNetwork.node[69] typename "\"SensorNode\""
+par UavWsnNetwork.node[69] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[69] chProbability 0.1
+par UavWsnNetwork.node[69] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[69] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[69] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[69] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[69] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[69] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[69] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[69] chDutyCycle 0.3
+par UavWsnNetwork.node[69] memberDutyCycle 0.02
+par UavWsnNetwork.node[69] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[69] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[69] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[69] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[69] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[69] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[69] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[69] finalEnergy 0.49957009932352
+scalar UavWsnNetwork.node[69] energyConsumed 0.00042990067648467
+scalar UavWsnNetwork.node[69] isDead 0
+scalar UavWsnNetwork.node[69] controlPacketsSent 24
+scalar UavWsnNetwork.node[69] dataPacketsSent 0
+scalar UavWsnNetwork.node[69] roundsCompleted 2
+par UavWsnNetwork.node[70] typename "\"SensorNode\""
+par UavWsnNetwork.node[70] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[70] chProbability 0.1
+par UavWsnNetwork.node[70] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[70] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[70] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[70] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[70] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[70] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[70] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[70] chDutyCycle 0.3
+par UavWsnNetwork.node[70] memberDutyCycle 0.02
+par UavWsnNetwork.node[70] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[70] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[70] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[70] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[70] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[70] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[70] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[70] finalEnergy 0.49842940479109
+scalar UavWsnNetwork.node[70] energyConsumed 0.0015705952089142
+scalar UavWsnNetwork.node[70] isDead 0
+scalar UavWsnNetwork.node[70] controlPacketsSent 20
+scalar UavWsnNetwork.node[70] dataPacketsSent 1
+scalar UavWsnNetwork.node[70] roundsCompleted 2
+par UavWsnNetwork.node[71] typename "\"SensorNode\""
+par UavWsnNetwork.node[71] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[71] chProbability 0.1
+par UavWsnNetwork.node[71] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[71] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[71] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[71] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[71] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[71] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[71] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[71] chDutyCycle 0.3
+par UavWsnNetwork.node[71] memberDutyCycle 0.02
+par UavWsnNetwork.node[71] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[71] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[71] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[71] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[71] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[71] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[71] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[71] finalEnergy 0.49955734406545
+scalar UavWsnNetwork.node[71] energyConsumed 0.00044265593455384
+scalar UavWsnNetwork.node[71] isDead 0
+scalar UavWsnNetwork.node[71] controlPacketsSent 2
+scalar UavWsnNetwork.node[71] dataPacketsSent 2
+scalar UavWsnNetwork.node[71] roundsCompleted 2
+par UavWsnNetwork.node[72] typename "\"SensorNode\""
+par UavWsnNetwork.node[72] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[72] chProbability 0.1
+par UavWsnNetwork.node[72] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[72] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[72] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[72] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[72] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[72] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[72] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[72] chDutyCycle 0.3
+par UavWsnNetwork.node[72] memberDutyCycle 0.02
+par UavWsnNetwork.node[72] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[72] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[72] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[72] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[72] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[72] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[72] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[72] finalEnergy 0.49961250000373
+scalar UavWsnNetwork.node[72] energyConsumed 0.00038749999627153
+scalar UavWsnNetwork.node[72] isDead 0
+scalar UavWsnNetwork.node[72] controlPacketsSent 2
+scalar UavWsnNetwork.node[72] dataPacketsSent 2
+scalar UavWsnNetwork.node[72] roundsCompleted 2
+par UavWsnNetwork.node[73] typename "\"SensorNode\""
+par UavWsnNetwork.node[73] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[73] chProbability 0.1
+par UavWsnNetwork.node[73] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[73] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[73] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[73] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[73] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[73] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[73] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[73] chDutyCycle 0.3
+par UavWsnNetwork.node[73] memberDutyCycle 0.02
+par UavWsnNetwork.node[73] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[73] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[73] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[73] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[73] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[73] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[73] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[73] finalEnergy 0.49824642740091
+scalar UavWsnNetwork.node[73] energyConsumed 0.0017535725990905
+scalar UavWsnNetwork.node[73] isDead 0
+scalar UavWsnNetwork.node[73] controlPacketsSent 37
+scalar UavWsnNetwork.node[73] dataPacketsSent 0
+scalar UavWsnNetwork.node[73] roundsCompleted 2
+par UavWsnNetwork.node[74] typename "\"SensorNode\""
+par UavWsnNetwork.node[74] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[74] chProbability 0.1
+par UavWsnNetwork.node[74] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[74] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[74] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[74] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[74] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[74] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[74] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[74] chDutyCycle 0.3
+par UavWsnNetwork.node[74] memberDutyCycle 0.02
+par UavWsnNetwork.node[74] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[74] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[74] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[74] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[74] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[74] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[74] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[74] finalEnergy 0.49954008796341
+scalar UavWsnNetwork.node[74] energyConsumed 0.00045991203659197
+scalar UavWsnNetwork.node[74] isDead 0
+scalar UavWsnNetwork.node[74] controlPacketsSent 2
+scalar UavWsnNetwork.node[74] dataPacketsSent 2
+scalar UavWsnNetwork.node[74] roundsCompleted 2
+par UavWsnNetwork.node[75] typename "\"SensorNode\""
+par UavWsnNetwork.node[75] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[75] chProbability 0.1
+par UavWsnNetwork.node[75] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[75] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[75] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[75] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[75] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[75] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[75] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[75] chDutyCycle 0.3
+par UavWsnNetwork.node[75] memberDutyCycle 0.02
+par UavWsnNetwork.node[75] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[75] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[75] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[75] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[75] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[75] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[75] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[75] finalEnergy 0.49988261166
+scalar UavWsnNetwork.node[75] energyConsumed 0.00011738834
+scalar UavWsnNetwork.node[75] isDead 0
+scalar UavWsnNetwork.node[75] controlPacketsSent 1
+scalar UavWsnNetwork.node[75] dataPacketsSent 0
+scalar UavWsnNetwork.node[75] roundsCompleted 2
+par UavWsnNetwork.node[76] typename "\"SensorNode\""
+par UavWsnNetwork.node[76] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[76] chProbability 0.1
+par UavWsnNetwork.node[76] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[76] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[76] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[76] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[76] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[76] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[76] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[76] chDutyCycle 0.3
+par UavWsnNetwork.node[76] memberDutyCycle 0.02
+par UavWsnNetwork.node[76] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[76] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[76] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[76] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[76] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[76] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[76] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[76] finalEnergy 0.49869149962449
+scalar UavWsnNetwork.node[76] energyConsumed 0.001308500375508
+scalar UavWsnNetwork.node[76] isDead 0
+scalar UavWsnNetwork.node[76] controlPacketsSent 2
+scalar UavWsnNetwork.node[76] dataPacketsSent 1
+scalar UavWsnNetwork.node[76] roundsCompleted 2
+par UavWsnNetwork.node[77] typename "\"SensorNode\""
+par UavWsnNetwork.node[77] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[77] chProbability 0.1
+par UavWsnNetwork.node[77] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[77] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[77] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[77] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[77] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[77] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[77] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[77] chDutyCycle 0.3
+par UavWsnNetwork.node[77] memberDutyCycle 0.02
+par UavWsnNetwork.node[77] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[77] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[77] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[77] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[77] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[77] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[77] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[77] finalEnergy 0.49959200197392
+scalar UavWsnNetwork.node[77] energyConsumed 0.00040799802607575
+scalar UavWsnNetwork.node[77] isDead 0
+scalar UavWsnNetwork.node[77] controlPacketsSent 2
+scalar UavWsnNetwork.node[77] dataPacketsSent 2
+scalar UavWsnNetwork.node[77] roundsCompleted 2
+par UavWsnNetwork.node[78] typename "\"SensorNode\""
+par UavWsnNetwork.node[78] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[78] chProbability 0.1
+par UavWsnNetwork.node[78] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[78] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[78] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[78] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[78] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[78] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[78] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[78] chDutyCycle 0.3
+par UavWsnNetwork.node[78] memberDutyCycle 0.02
+par UavWsnNetwork.node[78] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[78] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[78] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[78] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[78] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[78] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[78] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[78] finalEnergy 0.49845819455922
+scalar UavWsnNetwork.node[78] energyConsumed 0.0015418054407777
+scalar UavWsnNetwork.node[78] isDead 0
+scalar UavWsnNetwork.node[78] controlPacketsSent 26
+scalar UavWsnNetwork.node[78] dataPacketsSent 0
+scalar UavWsnNetwork.node[78] roundsCompleted 2
+par UavWsnNetwork.node[79] typename "\"SensorNode\""
+par UavWsnNetwork.node[79] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[79] chProbability 0.1
+par UavWsnNetwork.node[79] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[79] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[79] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[79] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[79] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[79] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[79] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[79] chDutyCycle 0.3
+par UavWsnNetwork.node[79] memberDutyCycle 0.02
+par UavWsnNetwork.node[79] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[79] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[79] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[79] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[79] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[79] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[79] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[79] finalEnergy 0.49964956537778
+scalar UavWsnNetwork.node[79] energyConsumed 0.00035043462221906
+scalar UavWsnNetwork.node[79] isDead 0
+scalar UavWsnNetwork.node[79] controlPacketsSent 21
+scalar UavWsnNetwork.node[79] dataPacketsSent 0
+scalar UavWsnNetwork.node[79] roundsCompleted 2
+par UavWsnNetwork.node[80] typename "\"SensorNode\""
+par UavWsnNetwork.node[80] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[80] chProbability 0.1
+par UavWsnNetwork.node[80] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[80] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[80] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[80] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[80] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[80] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[80] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[80] chDutyCycle 0.3
+par UavWsnNetwork.node[80] memberDutyCycle 0.02
+par UavWsnNetwork.node[80] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[80] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[80] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[80] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[80] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[80] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[80] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[80] finalEnergy 0.49977157841537
+scalar UavWsnNetwork.node[80] energyConsumed 0.00022842158463301
+scalar UavWsnNetwork.node[80] isDead 0
+scalar UavWsnNetwork.node[80] controlPacketsSent 1
+scalar UavWsnNetwork.node[80] dataPacketsSent 1
+scalar UavWsnNetwork.node[80] roundsCompleted 2
+par UavWsnNetwork.node[81] typename "\"SensorNode\""
+par UavWsnNetwork.node[81] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[81] chProbability 0.1
+par UavWsnNetwork.node[81] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[81] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[81] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[81] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[81] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[81] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[81] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[81] chDutyCycle 0.3
+par UavWsnNetwork.node[81] memberDutyCycle 0.02
+par UavWsnNetwork.node[81] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[81] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[81] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[81] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[81] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[81] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[81] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[81] finalEnergy 0.49888232
+scalar UavWsnNetwork.node[81] energyConsumed 0.00111768
+scalar UavWsnNetwork.node[81] isDead 0
+scalar UavWsnNetwork.node[81] controlPacketsSent 1
+scalar UavWsnNetwork.node[81] dataPacketsSent 0
+scalar UavWsnNetwork.node[81] roundsCompleted 2
+par UavWsnNetwork.node[82] typename "\"SensorNode\""
+par UavWsnNetwork.node[82] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[82] chProbability 0.1
+par UavWsnNetwork.node[82] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[82] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[82] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[82] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[82] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[82] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[82] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[82] chDutyCycle 0.3
+par UavWsnNetwork.node[82] memberDutyCycle 0.02
+par UavWsnNetwork.node[82] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[82] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[82] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[82] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[82] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[82] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[82] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[82] finalEnergy 0.4984594398765
+scalar UavWsnNetwork.node[82] energyConsumed 0.0015405601235015
+scalar UavWsnNetwork.node[82] isDead 0
+scalar UavWsnNetwork.node[82] controlPacketsSent 29
+scalar UavWsnNetwork.node[82] dataPacketsSent 0
+scalar UavWsnNetwork.node[82] roundsCompleted 2
+par UavWsnNetwork.node[83] typename "\"SensorNode\""
+par UavWsnNetwork.node[83] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[83] chProbability 0.1
+par UavWsnNetwork.node[83] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[83] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[83] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[83] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[83] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[83] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[83] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[83] chDutyCycle 0.3
+par UavWsnNetwork.node[83] memberDutyCycle 0.02
+par UavWsnNetwork.node[83] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[83] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[83] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[83] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[83] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[83] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[83] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[83] finalEnergy 0.49978258879372
+scalar UavWsnNetwork.node[83] energyConsumed 0.00021741120628383
+scalar UavWsnNetwork.node[83] isDead 0
+scalar UavWsnNetwork.node[83] controlPacketsSent 1
+scalar UavWsnNetwork.node[83] dataPacketsSent 1
+scalar UavWsnNetwork.node[83] roundsCompleted 2
+par UavWsnNetwork.node[84] typename "\"SensorNode\""
+par UavWsnNetwork.node[84] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[84] chProbability 0.1
+par UavWsnNetwork.node[84] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[84] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[84] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[84] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[84] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[84] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[84] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[84] chDutyCycle 0.3
+par UavWsnNetwork.node[84] memberDutyCycle 0.02
+par UavWsnNetwork.node[84] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[84] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[84] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[84] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[84] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[84] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[84] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[84] finalEnergy 0.49949557504083
+scalar UavWsnNetwork.node[84] energyConsumed 0.00050442495916784
+scalar UavWsnNetwork.node[84] isDead 0
+scalar UavWsnNetwork.node[84] controlPacketsSent 2
+scalar UavWsnNetwork.node[84] dataPacketsSent 2
+scalar UavWsnNetwork.node[84] roundsCompleted 2
+par UavWsnNetwork.node[85] typename "\"SensorNode\""
+par UavWsnNetwork.node[85] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[85] chProbability 0.1
+par UavWsnNetwork.node[85] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[85] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[85] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[85] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[85] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[85] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[85] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[85] chDutyCycle 0.3
+par UavWsnNetwork.node[85] memberDutyCycle 0.02
+par UavWsnNetwork.node[85] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[85] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[85] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[85] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[85] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[85] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[85] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[85] finalEnergy 0.4997554788233
+scalar UavWsnNetwork.node[85] energyConsumed 0.0002445211767004
+scalar UavWsnNetwork.node[85] isDead 0
+scalar UavWsnNetwork.node[85] controlPacketsSent 1
+scalar UavWsnNetwork.node[85] dataPacketsSent 1
+scalar UavWsnNetwork.node[85] roundsCompleted 2
+par UavWsnNetwork.node[86] typename "\"SensorNode\""
+par UavWsnNetwork.node[86] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[86] chProbability 0.1
+par UavWsnNetwork.node[86] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[86] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[86] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[86] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[86] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[86] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[86] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[86] chDutyCycle 0.3
+par UavWsnNetwork.node[86] memberDutyCycle 0.02
+par UavWsnNetwork.node[86] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[86] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[86] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[86] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[86] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[86] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[86] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[86] finalEnergy 0.49951799299222
+scalar UavWsnNetwork.node[86] energyConsumed 0.00048200700777578
+scalar UavWsnNetwork.node[86] isDead 0
+scalar UavWsnNetwork.node[86] controlPacketsSent 2
+scalar UavWsnNetwork.node[86] dataPacketsSent 2
+scalar UavWsnNetwork.node[86] roundsCompleted 2
+par UavWsnNetwork.node[87] typename "\"SensorNode\""
+par UavWsnNetwork.node[87] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[87] chProbability 0.1
+par UavWsnNetwork.node[87] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[87] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[87] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[87] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[87] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[87] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[87] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[87] chDutyCycle 0.3
+par UavWsnNetwork.node[87] memberDutyCycle 0.02
+par UavWsnNetwork.node[87] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[87] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[87] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[87] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[87] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[87] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[87] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[87] finalEnergy 0.49986624333931
+scalar UavWsnNetwork.node[87] energyConsumed 0.00013375666069107
+scalar UavWsnNetwork.node[87] isDead 0
+scalar UavWsnNetwork.node[87] controlPacketsSent 1
+scalar UavWsnNetwork.node[87] dataPacketsSent 1
+scalar UavWsnNetwork.node[87] roundsCompleted 2
+par UavWsnNetwork.node[88] typename "\"SensorNode\""
+par UavWsnNetwork.node[88] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[88] chProbability 0.1
+par UavWsnNetwork.node[88] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[88] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[88] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[88] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[88] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[88] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[88] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[88] chDutyCycle 0.3
+par UavWsnNetwork.node[88] memberDutyCycle 0.02
+par UavWsnNetwork.node[88] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[88] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[88] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[88] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[88] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[88] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[88] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[88] finalEnergy 0.49969589756755
+scalar UavWsnNetwork.node[88] energyConsumed 0.00030410243245284
+scalar UavWsnNetwork.node[88] isDead 0
+scalar UavWsnNetwork.node[88] controlPacketsSent 2
+scalar UavWsnNetwork.node[88] dataPacketsSent 2
+scalar UavWsnNetwork.node[88] roundsCompleted 2
+par UavWsnNetwork.node[89] typename "\"SensorNode\""
+par UavWsnNetwork.node[89] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[89] chProbability 0.1
+par UavWsnNetwork.node[89] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[89] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[89] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[89] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[89] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[89] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[89] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[89] chDutyCycle 0.3
+par UavWsnNetwork.node[89] memberDutyCycle 0.02
+par UavWsnNetwork.node[89] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[89] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[89] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[89] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[89] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[89] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[89] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[89] finalEnergy 0.4996577590472
+scalar UavWsnNetwork.node[89] energyConsumed 0.00034224095279936
+scalar UavWsnNetwork.node[89] isDead 0
+scalar UavWsnNetwork.node[89] controlPacketsSent 2
+scalar UavWsnNetwork.node[89] dataPacketsSent 2
+scalar UavWsnNetwork.node[89] roundsCompleted 2
+par UavWsnNetwork.node[90] typename "\"SensorNode\""
+par UavWsnNetwork.node[90] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[90] chProbability 0.1
+par UavWsnNetwork.node[90] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[90] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[90] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[90] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[90] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[90] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[90] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[90] chDutyCycle 0.3
+par UavWsnNetwork.node[90] memberDutyCycle 0.02
+par UavWsnNetwork.node[90] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[90] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[90] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[90] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[90] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[90] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[90] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[90] finalEnergy 0.49959415217881
+scalar UavWsnNetwork.node[90] energyConsumed 0.00040584782118577
+scalar UavWsnNetwork.node[90] isDead 0
+scalar UavWsnNetwork.node[90] controlPacketsSent 2
+scalar UavWsnNetwork.node[90] dataPacketsSent 2
+scalar UavWsnNetwork.node[90] roundsCompleted 2
+par UavWsnNetwork.node[91] typename "\"SensorNode\""
+par UavWsnNetwork.node[91] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[91] chProbability 0.1
+par UavWsnNetwork.node[91] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[91] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[91] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[91] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[91] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[91] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[91] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[91] chDutyCycle 0.3
+par UavWsnNetwork.node[91] memberDutyCycle 0.02
+par UavWsnNetwork.node[91] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[91] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[91] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[91] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[91] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[91] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[91] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[91] finalEnergy 0.49985366376525
+scalar UavWsnNetwork.node[91] energyConsumed 0.00014633623475185
+scalar UavWsnNetwork.node[91] isDead 0
+scalar UavWsnNetwork.node[91] controlPacketsSent 10
+scalar UavWsnNetwork.node[91] dataPacketsSent 0
+scalar UavWsnNetwork.node[91] roundsCompleted 2
+par UavWsnNetwork.node[92] typename "\"SensorNode\""
+par UavWsnNetwork.node[92] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[92] chProbability 0.1
+par UavWsnNetwork.node[92] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[92] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[92] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[92] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[92] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[92] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[92] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[92] chDutyCycle 0.3
+par UavWsnNetwork.node[92] memberDutyCycle 0.02
+par UavWsnNetwork.node[92] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[92] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[92] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[92] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[92] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[92] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[92] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[92] finalEnergy 0.49963128321326
+scalar UavWsnNetwork.node[92] energyConsumed 0.00036871678673588
+scalar UavWsnNetwork.node[92] isDead 0
+scalar UavWsnNetwork.node[92] controlPacketsSent 2
+scalar UavWsnNetwork.node[92] dataPacketsSent 2
+scalar UavWsnNetwork.node[92] roundsCompleted 2
+par UavWsnNetwork.node[93] typename "\"SensorNode\""
+par UavWsnNetwork.node[93] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[93] chProbability 0.1
+par UavWsnNetwork.node[93] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[93] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[93] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[93] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[93] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[93] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[93] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[93] chDutyCycle 0.3
+par UavWsnNetwork.node[93] memberDutyCycle 0.02
+par UavWsnNetwork.node[93] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[93] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[93] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[93] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[93] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[93] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[93] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[93] finalEnergy 0.49988261638622
+scalar UavWsnNetwork.node[93] energyConsumed 0.00011738361377912
+scalar UavWsnNetwork.node[93] isDead 0
+scalar UavWsnNetwork.node[93] controlPacketsSent 1
+scalar UavWsnNetwork.node[93] dataPacketsSent 1
+scalar UavWsnNetwork.node[93] roundsCompleted 2
+par UavWsnNetwork.node[94] typename "\"SensorNode\""
+par UavWsnNetwork.node[94] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[94] chProbability 0.1
+par UavWsnNetwork.node[94] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[94] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[94] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[94] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[94] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[94] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[94] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[94] chDutyCycle 0.3
+par UavWsnNetwork.node[94] memberDutyCycle 0.02
+par UavWsnNetwork.node[94] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[94] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[94] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[94] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[94] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[94] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[94] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[94] finalEnergy 0.49953615502055
+scalar UavWsnNetwork.node[94] energyConsumed 0.00046384497945495
+scalar UavWsnNetwork.node[94] isDead 0
+scalar UavWsnNetwork.node[94] controlPacketsSent 2
+scalar UavWsnNetwork.node[94] dataPacketsSent 2
+scalar UavWsnNetwork.node[94] roundsCompleted 2
+par UavWsnNetwork.node[95] typename "\"SensorNode\""
+par UavWsnNetwork.node[95] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[95] chProbability 0.1
+par UavWsnNetwork.node[95] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[95] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[95] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[95] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[95] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[95] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[95] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[95] chDutyCycle 0.3
+par UavWsnNetwork.node[95] memberDutyCycle 0.02
+par UavWsnNetwork.node[95] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[95] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[95] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[95] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[95] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[95] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[95] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[95] finalEnergy 0.49876267030969
+scalar UavWsnNetwork.node[95] energyConsumed 0.0012373296903136
+scalar UavWsnNetwork.node[95] isDead 0
+scalar UavWsnNetwork.node[95] controlPacketsSent 2
+scalar UavWsnNetwork.node[95] dataPacketsSent 1
+scalar UavWsnNetwork.node[95] roundsCompleted 2
+par UavWsnNetwork.node[96] typename "\"SensorNode\""
+par UavWsnNetwork.node[96] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[96] chProbability 0.1
+par UavWsnNetwork.node[96] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[96] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[96] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[96] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[96] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[96] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[96] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[96] chDutyCycle 0.3
+par UavWsnNetwork.node[96] memberDutyCycle 0.02
+par UavWsnNetwork.node[96] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[96] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[96] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[96] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[96] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[96] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[96] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[96] finalEnergy 0.49973776591058
+scalar UavWsnNetwork.node[96] energyConsumed 0.00026223408942139
+scalar UavWsnNetwork.node[96] isDead 0
+scalar UavWsnNetwork.node[96] controlPacketsSent 1
+scalar UavWsnNetwork.node[96] dataPacketsSent 1
+scalar UavWsnNetwork.node[96] roundsCompleted 2
+par UavWsnNetwork.node[97] typename "\"SensorNode\""
+par UavWsnNetwork.node[97] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[97] chProbability 0.1
+par UavWsnNetwork.node[97] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[97] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[97] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[97] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[97] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[97] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[97] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[97] chDutyCycle 0.3
+par UavWsnNetwork.node[97] memberDutyCycle 0.02
+par UavWsnNetwork.node[97] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[97] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[97] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[97] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[97] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[97] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[97] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[97] finalEnergy 0.49816826732308
+scalar UavWsnNetwork.node[97] energyConsumed 0.0018317326769188
+scalar UavWsnNetwork.node[97] isDead 0
+scalar UavWsnNetwork.node[97] controlPacketsSent 28
+scalar UavWsnNetwork.node[97] dataPacketsSent 1
+scalar UavWsnNetwork.node[97] roundsCompleted 2
+par UavWsnNetwork.node[98] typename "\"SensorNode\""
+par UavWsnNetwork.node[98] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[98] chProbability 0.1
+par UavWsnNetwork.node[98] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[98] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[98] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[98] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[98] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[98] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[98] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[98] chDutyCycle 0.3
+par UavWsnNetwork.node[98] memberDutyCycle 0.02
+par UavWsnNetwork.node[98] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[98] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[98] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[98] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[98] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[98] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[98] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[98] finalEnergy 0.49855482049483
+scalar UavWsnNetwork.node[98] energyConsumed 0.0014451795051662
+scalar UavWsnNetwork.node[98] isDead 0
+scalar UavWsnNetwork.node[98] controlPacketsSent 15
+scalar UavWsnNetwork.node[98] dataPacketsSent 1
+scalar UavWsnNetwork.node[98] roundsCompleted 2
+par UavWsnNetwork.node[99] typename "\"SensorNode\""
+par UavWsnNetwork.node[99] initialEnergy 0.5J
+attr unit J
+par UavWsnNetwork.node[99] chProbability 0.1
+par UavWsnNetwork.node[99] controlPacketSize 200bit
+attr unit bit
+par UavWsnNetwork.node[99] dataPacketSize 2000bit
+attr unit bit
+par UavWsnNetwork.node[99] eElec 5e-08J
+attr unit J
+par UavWsnNetwork.node[99] eFreeSpace 1e-11J
+attr unit J
+par UavWsnNetwork.node[99] eMultiPath 1.3e-15J
+attr unit J
+par UavWsnNetwork.node[99] idleListeningPower 1.84e-05W
+attr unit W
+par UavWsnNetwork.node[99] commRadius 100m
+attr unit m
+par UavWsnNetwork.node[99] chDutyCycle 0.3
+par UavWsnNetwork.node[99] memberDutyCycle 0.02
+par UavWsnNetwork.node[99] isolatedDutyCycle 0.001
+par UavWsnNetwork.node[99] neighborDiscoveryDelay 0.2s
+attr unit s
+par UavWsnNetwork.node[99] clusteringPhaseDelay 2s
+attr unit s
+par UavWsnNetwork.node[99] joinAttemptDelay 0.8s
+attr unit s
+par UavWsnNetwork.node[99] unclusteredTimeout 3s
+attr unit s
+par UavWsnNetwork.node[99] roundDuration 200s
+attr unit s
+par UavWsnNetwork.node[99] maxBufferSize 200000bit
+attr unit bit
+scalar UavWsnNetwork.node[99] finalEnergy 0.49953168099929
+scalar UavWsnNetwork.node[99] energyConsumed 0.00046831900071315
+scalar UavWsnNetwork.node[99] isDead 0
+scalar UavWsnNetwork.node[99] controlPacketsSent 2
+scalar UavWsnNetwork.node[99] dataPacketsSent 2
+scalar UavWsnNetwork.node[99] roundsCompleted 2
+par UavWsnNetwork typename "\"UavWsnNetwork\""
+par UavWsnNetwork numNodes 100
+par UavWsnNetwork areaX 500m
+attr unit m
+par UavWsnNetwork areaY 500m
+attr unit m
+

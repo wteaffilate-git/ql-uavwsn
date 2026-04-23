@@ -1,0 +1,268 @@
+=====================================================================
+COMPLETE RL-BASED UAV-ASSISTED WSN ROUTING WORKFLOW (REFINED VERSION)
+Unified Distributed Q-Learning (UDQL) with Passive Clustering Refinement
+=====================================================================
+
+---------------------------------------------------------------
+ASSUMPTIONS / DESIGN PRINCIPLES
+---------------------------------------------------------------
+- No second clustering round (no CH_ADV rebroadcast)
+- RL refinement is passive (uses cached CH info)
+- SELF_CH is silent (no advertisement flooding)
+- At most ONE join (or one switch with strict condition) per round
+- UAV scheduling based on beacon + RL
+- All agents use lightweight tabular Q-learning
+
+---------------------------------------------------------------
+DATA STRUCTURES
+---------------------------------------------------------------
+
+Node:
+    CH_Table = { (CH_id, RSSI, distance_est, timestamp) }
+    Q_table_node
+
+CH:
+    Neighbor_CH_Table
+    Queue Q_i
+    Q_table_ch
+
+UAV:
+    CH_State_Table = { (CH_id, Q_i, A_i, E_i, D_i) }
+    Q_table_uav
+
+---------------------------------------------------------------
+ALGORITHM 1: OVERALL PROTOCOL (PER ROUND t)
+---------------------------------------------------------------
+
+FOR each round t DO
+
+    // --- Phase 1: Energy-Aware LEACH Clustering ---
+    perform_LEACH_clustering_with_energy_threshold()
+
+    // --- Phase 2: RL-Based Clustering Refinement (Passive) ---
+    FOR each node n_i DO
+        IF n_i is NOT clustered THEN
+            S_n ← observe_state(n_i)
+            a_n ← ε-greedy(Q_table_node, S_n)
+
+            SWITCH a_n:
+
+                CASE JOIN:
+                    bestCH ← select_from_cached(CH_Table)
+                    IF bestCH exists AND not joined before THEN
+                        send_unicast_join(bestCH)
+
+                CASE SELF_CH:
+                    mark_as_silent_CH(n_i)
+                    initialize_local_CH_state()
+
+                CASE WAIT_UAV:
+                    buffer_data_locally()
+
+            store_transition(n_i)
+        ENDIF
+    ENDFOR
+
+    wait Δt_refine   // short refinement window
+
+    freeze_clusters_for_this_round()
+
+
+    // --- Phase 3: Intra-Cluster Data Transmission ---
+    FOR each cluster C_k DO
+        schedule_TDMA(C_k)
+
+        FOR each member node n_j in C_k DO
+            transmit_data_to_CH(n_j)
+        ENDFOR
+    ENDFOR
+
+
+    // --- Phase 4: CH Data Aggregation ---
+    FOR each CH_i DO
+        aggregate_received_data()
+        update_queue(Q_i)
+    ENDFOR
+
+
+    // --- Phase 5: CH-Level RL Routing Decisions ---
+    FOR each CH_i DO
+        FOR each packet p in Q_i DO
+
+            S_c ← observe_state(CH_i)
+            a_c ← ε-greedy(Q_table_ch, S_c)
+
+            SWITCH a_c:
+
+                CASE TRANSMIT_TO_UAV:
+                    IF UAV_in_range THEN
+                        transmit_to_UAV(p)
+                    ELSE
+                        buffer(p)
+
+                CASE BUFFER:
+                    keep_in_queue(p)
+
+                CASE FORWARD_TO_CH:
+                    nextCH ← select_neighbor_CH()
+                    forward_packet(p, nextCH)
+
+            store_transition(CH_i)
+        ENDFOR
+    ENDFOR
+
+
+    // --- Phase 6: UAV Beacon Broadcast ---
+    UAV.broadcast(HELLO):
+        (UAV_ID, Position, Velocity_Vector, T_remain)
+
+
+    // --- Phase 7: CH Status Reporting ---
+    FOR each CH_i receiving HELLO DO
+        compute_local_metrics(Q_i, A_i, E_i)
+
+        send_STATUS_to_UAV(CH_i):
+            (CH_ID, Q_i, A_i, E_i)
+    ENDFOR
+
+
+    // --- Phase 8: UAV RL-Based Scheduling ---
+    UAV.collect(CH_State_Table)
+
+    FOR each CH_i in CH_State_Table DO
+        S_u ← (Q_i, A_i, E_i, D_i)
+        a_u ← evaluate_priority(Q_table_uav, S_u)
+    ENDFOR
+
+    S_selected ← select_top_K_CHs_based_on_Q()
+
+
+    // --- Phase 9: UAV Mobility (RCLF) ---
+    compute_flow_vector():
+        v_flow = Σ (priority_i * direction_i)
+
+    v_new = α * v_random + (1-α) * v_flow
+    UAV.move(v_new)
+
+
+    // --- Phase 10: UAV Data Collection ---
+    FOR each CH_i in S_selected DO
+        UAV.send(POLL, CH_i)
+
+        CH_i.transmit_buffered_data()
+
+        UAV.send(ACK)
+    ENDFOR
+
+
+    // --- Phase 11: UAV → BS Transmission ---
+    UAV.transmit_all_collected_data_to_BS()
+
+
+    // --- Phase 12: RL Learning Updates ---
+    
+    // Node Updates
+    FOR each node n_i that used RL DO
+        r_n ← compute_reward_node()
+        update_Q(Q_table_node)
+    ENDFOR
+
+    // CH Updates
+    FOR each CH_i DO
+        r_c ← compute_reward_CH()
+        update_Q(Q_table_ch)
+    ENDFOR
+
+    // UAV Updates
+    r_u ← compute_reward_UAV()
+    update_Q(Q_table_uav)
+
+
+END FOR
+
+
+=====================================================================
+ALGORITHM 2: NODE RL (CLUSTERING REFINEMENT)
+=====================================================================
+
+IF node is unclustered THEN
+
+    S_n = (Energy_level, Distance_to_CH, Neighbor_density, UAV_proximity)
+
+    a_n = ε-greedy(Q_n, S_n)
+
+    IF JOIN:
+        use_cached_CH_table()
+        send_single_unicast_join()
+
+    ELSE IF SELF_CH:
+        act_as_silent_CH()
+
+    ELSE:
+        buffer_and_wait_for_UAV()
+
+ENDIF
+
+
+=====================================================================
+ALGORITHM 3: CH RL (ROUTING DECISION)
+=====================================================================
+
+FOR each packet p:
+
+    S_c = (Energy, Queue_size, Packet_age, UAV_trend, Neighbor_info)
+
+    a_c = ε-greedy(Q_c, S_c)
+
+    IF TRANSMIT_TO_UAV:
+        if UAV reachable → send
+        else → buffer
+
+    ELSE IF BUFFER:
+        keep packet
+
+    ELSE IF FORWARD_TO_CH:
+        select best neighbor CH
+        forward packet
+
+
+=====================================================================
+ALGORITHM 4: UAV RL (SCHEDULING + MOBILITY)
+=====================================================================
+
+collect CH states via STATUS
+
+FOR each CH_i:
+
+    S_u = (Q_i, A_i, E_i, Distance_i)
+
+    evaluate Q_u(S_u)
+
+END FOR
+
+select top-K CHs
+
+update movement using RCLF
+
+visit selected CHs
+
+collect data
+
+update Q_u
+
+
+=====================================================================
+KEY PROPERTIES OF THE ALGORITHM
+=====================================================================
+
+✔ No redundant CH advertisements
+✔ No second clustering overhead
+✔ Strictly bounded join operations
+✔ Passive refinement (low communication cost)
+✔ Fully distributed RL with shared structure
+✔ Handles partial UAV coverage explicitly
+✔ Lightweight and implementable in OMNeT++
+
+=====================================================================
+END OF PSEUDOCODE
+=====================================================================

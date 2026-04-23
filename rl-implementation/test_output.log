@@ -1,0 +1,32 @@
+OMNeT++ Discrete Event Simulation  (C) 1992-2025 Andras Varga, OpenSim Ltd.
+Version: 6.3.0, build: 251110-bb3d6a4731, edition: Academic Public License -- NOT FOR COMMERCIAL USE
+See the license for distribution terms and warranty disclaimer
+
+Setting up Cmdenv...
+
+Loading NED files from .:  1
+
+Preparing for running configuration General, run #0...
+Assigned runID=General-0-20260423-14:02:23-8926
+Setting up network "UavWsnNetwork"...
+Initializing...
+MetricsCollector::setCollectionWindow(691) - uavCollectionWindowDuration now = 691
+
+Running simulation...
+** Event #0   t=0   Elapsed: 8e-06s (0m 00s)  0% completed  (0% total)   ev/sec=0
+** Event #2768   t=100   Elapsed: 0.005171s (0m 00s)  100% completed  (100% total)   ev/sec=0
+
+<!> Simulation time limit reached -- at t=100s, event #2768
+
+Calling finish() at end of Run #0...
+undisposed object: (omnetpp::cMessage) UavWsnNetwork.uav.CH_ADV -- check module destructor
+undisposed object: (omnetpp::cMessage) UavWsnNetwork.uav.CH_ADV -- check module destructor
+undisposed object: (omnetpp::cMessage) UavWsnNetwork.uav.CH_ADV -- check module destructor
+undisposed object: (omnetpp::cMessage) UavWsnNetwork.uav.CH_ADV -- check module destructor
+undisposed object: (omnetpp::cMessage) UavWsnNetwork.uav.CH_ADV -- check module destructor
+undisposed object: (omnetpp::cMessage) UavWsnNetwork.uav.CH_ADV -- check module destructor
+undisposed object: (omnetpp::cMessage) UavWsnNetwork.uav.CH_ADV -- check module destructor
+undisposed object: (omnetpp::cMessage) UavWsnNetwork.uav.CH_ADV -- check module destructor
+undisposed object: (omnetpp::cMessage) UavWsnNetwork.uav.CH_ADV -- check module destructor
+
+End.

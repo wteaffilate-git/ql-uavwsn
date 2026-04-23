@@ -1,0 +1,61 @@
+1. All agents (Node, CH, UAV) use the same Q-learning structure, but with different parameter tuning based on their roles:
+
+Parameter	Meaning
+α	        Learning rate
+γ	        Discount factor
+ϵ	        Exploration rate
+Q(s,a)	    Q-table
+
+2. Node Agent (Clustering Refinement RL)
+    Role Characteristics
+        executes once per round
+        impact is local and short-term
+        decisions should stabilize quickly
+
+    Q-table initialization:
+        Q_n(s,a) = 0   ∀ s,a
+    Learning rate α_n:
+        α_n = 0.15
+    Discount factor γ_n:
+        γ_n = 0.6
+    Exploration rate ϵ_n:
+        ε_n = 0.2 → decay to 0.05
+    Decay: ε_n(t) = ε_n * exp(-0.002 * t)
+
+3. CH agent (routing RL)
+    Q-table initialization: Q_c(s,a) = 0
+    Learning rate α_c = 0.1
+    Discount factor γ_c = 0.85
+    Exploration rate ε_c = 0.25 → decay to 0.05
+    Decay ε_c(t) = ε_c * exp(-0.0015 * t)
+
+4. UAV Agent (Scheduling + Mobility RL)
+    Q-table initialization Q_u(s,a) = 0
+    Learning rate α_u = 0.2
+    Discount factor γ_u = 0.9
+    Exploration rate ε_u = 0.3 → decay to 0.05
+    Decay ε_u(t) = ε_u * exp(-0.001 * t)
+
+5. State Discretization
+    Use small discrete bins:
+        Variable	Levels
+        Energy	    Low / Medium / High
+        Queue	    Small / Medium / Large
+        Delay	    Low / Medium / High
+        Distance	Near / Far
+        UAV Trend	Approaching / Receding
+
+6. Reward Scaling
+    Normalize rewards: R ∈ [-1, +1]
+    Example:
+        successful delivery → +1
+        high delay → -0.5
+        high energy use → -0.3
+    prevents Q-value explosion
+
+7. Learning Synchronization
+    Each agent updates:
+        at end of round (node, UAV)
+        per event/packet (CH)
+    No global synchronization needed
+    
