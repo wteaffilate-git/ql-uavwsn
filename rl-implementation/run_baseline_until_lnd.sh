@@ -17,8 +17,14 @@ PROJECT_DIR="$(pwd)"
 cd "$PROJECT_DIR"
 
 # Load OMNeT++ environment
-echo -e "${BLUE}Loading OMNeT++ environment...${NC}"
-source /home/wte/omnetpp/omnetpp-6.3.0/setenv
+OMNETPP_HOME="${OMNETPP_HOME:-/home/codespace/omnetpp-6.3.0}"
+echo -e "${BLUE}Loading OMNeT++ environment from $OMNETPP_HOME...${NC}"
+if [ ! -f "$OMNETPP_HOME/setenv" ]; then
+    echo -e "${RED}✗ OMNeT++ setenv not found at $OMNETPP_HOME/setenv${NC}"
+    exit 1
+fi
+source "$OMNETPP_HOME/setenv"
+SIM_BINARY="$PROJECT_DIR/out/clang-release/uav-wsn-bm"
 
 echo -e "${YELLOW}=========================================${NC}"
 echo -e "${YELLOW}  UAV-WSN-BM: Baseline S0 Runner (LND)   ${NC}"
@@ -48,7 +54,7 @@ echo "Output directory: $RESULTS_DIR"
 echo ""
 
 # Run simulation until LND (1161000s is ~1500 rounds at 774s per round)
-timeout 7200 ./uav-wsn-bm -u Cmdenv -c General \
+timeout 7200 "$SIM_BINARY" -u Cmdenv -c General \
     omnetpp.ini \
     -n . \
     --cmdenv-express-mode=true \

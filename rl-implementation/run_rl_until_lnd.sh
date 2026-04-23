@@ -17,8 +17,14 @@ PROJECT_DIR="$(pwd)"
 cd "$PROJECT_DIR"
 
 # Load OMNeT++ environment
-echo -e "${BLUE}Loading OMNeT++ environment...${NC}"
-source /home/wte/omnetpp/omnetpp-6.3.0/setenv
+OMNETPP_HOME="${OMNETPP_HOME:-/home/codespace/omnetpp-6.3.0}"
+echo -e "${BLUE}Loading OMNeT++ environment from $OMNETPP_HOME...${NC}"
+if [ ! -f "$OMNETPP_HOME/setenv" ]; then
+    echo -e "${RED}✗ OMNeT++ setenv not found at $OMNETPP_HOME/setenv${NC}"
+    exit 1
+fi
+source "$OMNETPP_HOME/setenv"
+SIM_BINARY="$PROJECT_DIR/out/clang-release/uav-wsn-bm"
 
 echo -e "${YELLOW}=========================================${NC}"
 echo -e "${YELLOW}  UAV-WSN-RL: RL-Based Runner (LND)   ${NC}"
@@ -59,7 +65,7 @@ while [ $round -lt $MAX_ROUNDS ] && [ "$converged" = false ]; do
     echo -e "${BLUE}Running rounds $((round+1))-$((round+CONVERGENCE_CHECK_INTERVAL))...${NC}"
     
     # Run simulation for next batch of rounds
-    timeout 3600 ./uav-wsn-bm -u Cmdenv -c General \
+    timeout 3600 "$SIM_BINARY" -u Cmdenv -c General \
         omnetpp.ini \
         -n . \
         --cmdenv-express-mode=true \

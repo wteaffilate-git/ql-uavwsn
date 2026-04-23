@@ -1,15 +1,34 @@
-=== Simulation Summary ===
-Total Nodes: 100
-FND (First Node Death): Round -1
-LND (Last Node Death): Round -1
-Total Packets Generated: 89
-Total Packets Received: 0
-Overall PDR: 0
-Average End-to-End Delay: 0 s
-Total Energy Consumed: 0.0185432 J
-Total Contact Events: 3
-Total Expired Packets: 0
-Buffer Overflow Rate: 0
-Unique RL States Visited: 2
-RL Actions Taken: 87
-RL Exploration Actions: 22
+RL-Baseline Simulation Summary
+============================
+Total rounds recorded: 2
+Final round: 2
+Final average residual energy: 0.499345 J
+Final total network energy: 49.934500 J
+Final PDR: 0.000000
+Final throughput: 0.100000 kbps
+Final alive nodes: 100
+Final dead nodes: 0
+Final control overhead ratio: 0.829146
+
+RL convergence file is empty or not available.
+
+Files included:
+ - buffer_overflow.csv
+ - clustering.csv
+ - contact.csv
+ - delay.csv
+ - energy.csv
+ - network.csv
+ - overhead.csv
+ - pdr.csv
+ - rl_actions.csv
+ - rl_convergence.csv
+ - rl_convergence_result.txt
+ - rl_rewards.csv
+ - rl_state_visits.csv
+ - simulation.log
+ - stability.csv
+ - summary.txt
+ - throughput.csv
+ - topology.csv
+ - uav_trajectory.csv
